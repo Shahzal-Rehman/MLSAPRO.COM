@@ -58,7 +58,61 @@ body {
     </script>
 
     <!-- Your SDK code -->
-    <script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+            display: none;
+        }
+    </style>
+<script>
       window.fbAsyncInit = function() {
         FB.init({
           xfbml            : true,
@@ -95,7 +149,7 @@ body {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Title  -->
-    <title>MLSAPRO Official</title>
+    <title>Shahzal Rehman</title>
 
     <!-- favicon  -->
     <link rel="shortcut icon" type="image/jpg" href="img\favicon\icon128.png"/>
@@ -117,267 +171,50 @@ body {
   
   </head>
   
-  <body>
-<!-- Hero Image Start -->
+  <body><div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p id="error-message">Invalid username or password!</p>
+    </div>
 
-    <main>
-      <header id="header">
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-        <div class="overlay overlay-lg">
-          <img src="./img/shapes/square.png" class="shape square" alt="" />
-          <img src="./img/shapes/circle.png" class="shape circle" alt="" />
-          <img
-            src="./img/shapes/half-circle.png"
-            class="shape half-circle1"
-            alt=""
-          />
-          <img
-            src="./img/shapes/half-circle.png"
-            class="shape half-circle2"
-            alt=""
-          />
-          <img src="./img/shapes/x.png" class="shape xshape" alt="" />
-          <img src="./img/shapes/wave.png" class="shape wave wave1" alt="" />
-          <img src="./img/shapes/wave.png" class="shape wave wave2" alt="" />
-          <img src="./img/shapes/triangle.png" class="shape triangle" alt="" />
-          <img src="./img/shapes/letters.png" class="letters" alt="" />
-          <img src="./img/shapes/points1.png" class="points points1" alt="" />
-        </div>
+            // Retrieve username and password
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
-    <!-- Hero Image End -->
+            // Replace with your actual username and password
+            var validUsername = 'sr';
+            var validPassword = 'sr';
 
-<!-- Header Start -->
+            // Validate the username and password
+            if (username === validUsername && password === validPassword) {
+                // Store the login state in local storage
+                localStorage.setItem('isLoggedIn', 'true');
 
-        <nav>
-          <div class="container">
-            <div class="logo">
+                // Redirect to home page
+                window.location.href = 'https://mlsapro.com/home';
+            } else {
+                // Display error message
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
 
-              <div class="skill-box wow fadeInUp animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <img src="./img/logo.png" alt="" />
-              </div>
+        // Check if the user is already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                // Redirect to home page
+                window.location.href = 'https://mlsapro.com/home';
+            }
+        });
+    </script>
 
-            </div>
-
-            <div class="links">
-              <ul>
-                <li>
-                  
-                  <div class="skill-box wow fadeInLeft animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                  <a href="https://mlsapro.com/home">Home</a>
-                  </div>
-
-                </li>
-                <li>
-                  
-                  <div class="skill-box wow fadeInLeft animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                  <a href="https://mlsapro.com/blogs">Blogs</a>
-                  </div>
-
-                </li>
-                <li>
-              
-                <li>
-
-                  <div class="skill-box wow fadeInLeft animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-                  <a href="https://mlsapro.com/contact">Contact</a>
-                  </div>
-
-                </li>
-                <li>
-
-                 
-
-                  <a>
-                  <input class="containertoggle" type="checkbox" id="toggle">
-                  </a>
-
-                </li>
-              </ul>
-            </div>
-
-            <div class="hamburger-menu">
-              <div class="bar"></div>
-            </div>
-          </div>
-        </nav>
-
-    <!-- Header End -->
- <!-- Hero Details Start -->
-
-        <div class="header-content">
-          <div class="container grid-2">
-            <div class="column-1">
-              <div class="skill-box wow fadeInLeft animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
-              <h1 class="header-title">MLSAPRO Official</h1>
-              </div>
-
-              <div class="skill-box wow fadeInRight animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-                <p class="header-text">
-                Greetings, This is Official Microsoft Learn Student Ambassadors Website......You can Contat us at mlsapro@stdntpartners.onmicrosoft.com
-              </p>
-              </div>
-
-    <!-- Hero Details End -->
-
-
-            </div>
-            <div class="column-2 image">
-              <img
-                src="./img/shapes/points2.png"
-                class="points points2"
-                alt=""
-              />
-              <img src="./img/person.png" class="img-element z-index" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-<br>
-<center>
-              <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <a href="https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc%20?wt.mc_id=studentamb_281705" class="btn-header">View Proof  of Ambassadorship</a>
-              </div></center> <br> <left>
-               <div> <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <a href="https://sites.google.com/view/sr-advance-excle" class="btn-header">SR EXCle Project</a> <br> 
-                    
-                 <center><div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <a href="https://sites.google.com/view/shahzal" class="btn-header">Achievements Of Shahzal Rehman</a> </center>
-                     <br>
-              </div><right>
-                        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <a href="https://sites.google.com/view/sr-inc/home" class="btn-header">A Legacy Of Excellence</a>
-                     
-              </div></right>
-                    <br> 
-              </div><center>
-                 <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-              <a href="https://snake.mlsapro.com/" class="btn-header">Play Snake Game</a>
-                     
-              </div></center>
-            </div>
-
-     
-             <!-- Footer Start -->
-
-    <footer class="footer">
-      <div class="container">
-        <div class="grid-4">
-          <div class="grid-4-col footer-about" class="overlay overlay-lg">
-            <img src="./img/shapes/letters.png" class="letters" alt="">
-
-            <h3 class="gradient-title-sm">About</h3>
-            <p class="text">
-            Greetings, I'm Shahzal Rehman, Senior Graphic Designer and UI/UX Designer. Sole proprietorship.
-            </p>
-          </div>
-
-          <div class="grid-4-col footer-links">
-            <h3 class="gradient-title-sm">Links</h3>
-            <ul>
-               <a href="#about">About</a>
-       
-              </li>
-            </ul>
-          </div>
-
-               <div class="grid-4-col footer-newstletter">
-            <h3 class="gradient-title-sm">Subscribe</h3>
-            <p class="text">
-            Elevation Requires Separation
-            </p>
-            <div class="footer-input-wrap">
-              <input type="email" class="footer-input" placeholder="Email" />
-              <a href="#" class="input-arrow">
-                <i class="fas fa-angle-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="bottom-footer">
-          <div class="copyright">
-            <p class="text">
-              Copyright &copy; 2022 All rights reserved | Made by
-              <span>Shahzal Rehman</span>
-            </p>
-          </div>
-
-          <div class="followme-wrap">
-            <div class="followme">
-              <h3>Follow me</h3>
-              <span class="footer-line"></span>
-              <div class="social-media">
-
-                <a href="https://www.facebook.com/shahzal.rehman">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-
-                <a href="https://twitter.com/ShahzalRehman">
-                  <i class="fab fa-twitter"></i>
-                </a>
-
-                <a href="https://www.instagram.com/shahzalrehman/">
-                  <i class="fab fa-instagram"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/in/shahzal-rehman-315b24254">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-
-
-                </a>
-                <a href="https://github.com/SR123456789-maker">
-                  <i class="fab fa-github"></i>
-                </a>
-
-              </div>
-            </div>
-
-            <div class="back-btn-wrap">
-              <a href="#" class="back-btn">
-                <i class="fas fa-chevron-up"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-     <!-- Footer END -->
-
-
-    <!-- Optional JavaScript -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/isotope.pkgd.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script src="./js/app.js"></script>
-    <script src="js/script.js"></script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBvZ0OrPv_wb7u9Ghjze_h9pZcLFMPmLhc",
-    authDomain: "mlsapro.firebaseapp.com",
-    projectId: "mlsapro",
-    storageBucket: "mlsapro.appspot.com",
-    messagingSenderId: "628713986367",
-    appId: "1:628713986367:web:03cbfbecf9352f21241b8a",
-    measurementId: "G-HK4T6P9LJ7"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
   </body>
 
 </html>
