@@ -275,25 +275,29 @@ body {
           <div class="grid-4-col footer-links">
             <h3 class="gradient-title-sm">Links</h3>
             <ul>
-               <a href="#about">About</a>
+               <a href="mailto:mlsapro@stdntpartners.onmicrosoft.com">Mail</a>
        
               </li>
             </ul>
           </div>
 
                <div class="grid-4-col footer-newstletter">
-            <h3 class="gradient-title-sm">Subscribe</h3>
-            <p class="text">
-            Elevation Requires Separation
-            </p>
-            <div class="footer-input-wrap">
-              <input type="email" class="footer-input" placeholder="Email" />
-              <a href="#" class="input-arrow">
-                <i class="fas fa-angle-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+  <h3 class="gradient-title-sm">Subscribe</h3>
+  <p class="text">Elevation Requires Separation</p>
+  <div class="footer-input-wrap">
+    <input type="email" id="emailInput" class="footer-input" placeholder="Email" />
+    <button onclick="subscribeEmail()" class="input-arrow">Subscribe</button>
+  </div>
+</div>
+
+<script>
+  function subscribeEmail() {
+    var email = document.getElementById("emailInput").value;
+    window.location.href = "mailto:shahzalrehman0302@gmail.com?subject=New%20Subscription&body=New%20email%20subscribed:%20" + email;
+    alert("Thank you for subscribing! An email has been opened for confirmation.");
+  }
+</script>
+
 
         <div class="bottom-footer">
           <div class="copyright">
