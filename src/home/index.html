@@ -117,7 +117,15 @@ body {
   
   </head>
   
-  <body>
+  <body><script>
+        // Check if the user is already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                // Redirect the user to the login page
+                window.location.href = 'https://mlsapro.com/';
+            }
+        });
+    </script>
 <!-- Hero Image Start -->
 
     <main>
