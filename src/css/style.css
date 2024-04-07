@@ -3,12 +3,12 @@
 
 /*========== Main Gradient Color : 
 background: rgb(179,0,255);
-background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
 ==========*/
 
 /*========== Button Hover Color Change (Inverse): 
 background: rgb(179,0,255);
-background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgbargba(192,192,192) 51%, rgba(255,0,254,1) 100%); 
+background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%); 
 ==========*/
 
 /*========== 
@@ -22,7 +22,7 @@ Gradient Header Start
   line-height: 1;
   font-size: 2.8rem;
   margin-bottom: 0.6rem;
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -44,7 +44,7 @@ Gradient Header Start
   width: 90px;
   height: 5px;
   border-radius: 3px;
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -52,7 +52,7 @@ Gradient Header Start
 
 
 .gradient-title-sm {
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   font-weight: 600;
   font-size: 1.6rem;
   -webkit-background-clip: text;
@@ -63,7 +63,7 @@ Gradient Header Start
   display: inline-block;
   padding: 0.85rem 2rem;
   background-color: rgb(179,0,255);
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgbargba(192,192,192) 51%, rgba(255,0,254,1) 100%);
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%);
   color: var(--light-one);
   border-radius: 2rem;
   font-size: 1.05rem;
@@ -74,7 +74,7 @@ Gradient Header Start
 
 .btn-header:hover {
   background-color: rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%); 
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%); 
 }
 
 /*========== 
@@ -127,7 +127,7 @@ main {
   height: 32px;
   width: 65px;
   background:rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   position: absolute;
   right: 0;
   border-radius: 20px;
@@ -155,7 +155,7 @@ main {
 }
 .dark-theme #toggle{
   background: rgb(179,0,255);
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgbargba(192,192,192) 51%, rgba(255,0,254,1) 100%);
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%);
 }
 .dark-theme #toggle:after{
   background-color: transparent;
@@ -185,7 +185,7 @@ Theme End ==========*/
   --dark-one: #333;
   --dark-two: #7a7a7a;
   --main-color: rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   --light-one: #fff;
   --light-two: #f9fafb;
   --light-three: #f6f7fb;
@@ -355,7 +355,7 @@ img {
   width: 90px;
   height: 5px;
   border-radius: 3px;
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -380,7 +380,7 @@ img {
   display: inline-block;
   padding: 0.85rem 2rem;
   background-color: rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%); 
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%); 
   color: var(--light-one);
   border-radius: 2rem;
   font-size: 1.05rem;
@@ -391,7 +391,7 @@ img {
 
 .btn:hover {
   background-color: rgb(179,0,255);
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgbargba(192,192,192) 51%, rgba(255,0,254,1) 100%);
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%);
 }
 
 .btn.small {
@@ -446,7 +446,7 @@ nav .container {
 
 .links a.active {
   background-color: rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%); 
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%); 
   color: var(--light-one);
   border-radius: 2rem;
   font-size: 1rem;
@@ -456,14 +456,14 @@ nav .container {
 
 .links a:hover {
   color: rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%); 
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
 }
 
 .links a.active:hover {
   color: rgb(255, 255, 255);
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgbargba(192,192,192) 51%, rgba(255,0,254,1) 100%);
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; 
 }
@@ -535,7 +535,7 @@ nav.open .links {
 .header-title {
   font-size: 3.8rem;
   line-height: 0.8;
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgbargba(192,192,192) 51%, rgba(255,0,254,1) 100%); 
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -543,7 +543,7 @@ nav.open .links {
 .header-text {
   font-size: 1.50rem;
   line-height: 1.6;
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 5%, rgbargba(192,192,192) 50%, rgba(255,0,254,1) 95%);
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 20px 0;
@@ -630,6 +630,7 @@ header .circle {
 }
 
 /* End header */
+
 
 /* Services */
 
