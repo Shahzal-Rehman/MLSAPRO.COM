@@ -380,7 +380,7 @@ img {
   display: inline-block;
   padding: 0.85rem 2rem;
   background-color: rgb(179,0,255);
-  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%); 
+  background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(192,192,192) 50%, rgba(255,0,254,1) 95%); 
   color: var(--light-one);
   border-radius: 2rem;
   font-size: 1.05rem;
@@ -391,7 +391,7 @@ img {
 
 .btn:hover {
   background-color: rgb(179,0,255);
-  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%);
+  background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(192,192,192) 51%, rgba(255,0,254,1) 100%);
 }
 
 .btn.small {
