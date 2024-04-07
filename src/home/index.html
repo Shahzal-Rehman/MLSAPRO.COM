@@ -95,7 +95,7 @@ body {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Title  -->
-    <title>Shahzal Rehman</title>
+    <title>MLSA PRO</title>
 
     <!-- favicon  -->
     <link rel="shortcut icon" type="image/jpg" href="img\favicon\icon128.png"/>
@@ -117,7 +117,16 @@ body {
   
   </head>
   
-  <body>
+  <body> 
+<script>
+        // Check if the user is already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                // Redirect the user to the login page
+                window.location.href = 'https://mlsapro.com/';
+            }
+        });
+    </script> 
 <!-- Hero Image Start -->
 
     <main>
@@ -213,7 +222,7 @@ body {
 
               <div class="skill-box wow fadeInRight animated" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
                 <p class="header-text">
-               Microsoft Learn Student Ambassador Professionals.
+               Microsoft Learn Student Ambassadors Professionals.
               </p>
               </div>
 
