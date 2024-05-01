@@ -30,4 +30,20 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+ <url>
+        <loc>http://mlsapro.com/blogs</loc>
+        <lastmod>2022-04-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+
+ <url>
+        <loc>http://mlsapro.com/contact</loc>
+        <lastmod>2022-04-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
 </urlset>
