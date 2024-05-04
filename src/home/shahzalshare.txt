@@ -1,0 +1,14 @@
+powershell
+
+$connectTestResult = Test-NetConnection -ComputerName shahzal.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded) {
+    # Save the password so the drive will persist on reboot
+    cmd.exe /C "cmdkey /add:`"shahzal.file.core.windows.net`" /user:`"localhost\shahzal`" /pass:`"ionU5HbPUFtqNrxHFbqLqvuVcxNatOx8cVf8Zk8le+LVbUcpxyVFx68SV8nMTeSNDPiqxjMjijJE+AStiQNggw==`""
+    # Mount the drive
+    New-PSDrive -Name Z -PSProvider FileSystem -Root "\\shahzal.file.core.windows.net\shahzal" -Persist
+} else {
+    Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
+
+mac
+open smb://shahzal:ionU5HbPUFtqNrxHFbqLqvuVcxNatOx8cVf8Zk8le%2BLVbUcpxyVFx68SV8nMTeSNDPiqxjMjijJE%2BAStiQNggw%3D%3D@shahzal.file.core.windows.net/shahzal
