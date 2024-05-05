@@ -195,40 +195,7 @@ body {
         <p id="error-message">Invalid username or password!</p>
     </div>
 
-    <script>
-        document.getElementById('login-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Retrieve username and password
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            // Replace with your actual username and password
-            var validUsername = 'mlsapro';
-            var validPassword = 'mlsapro';
-
-            // Validate the username and password
-            if (username === validUsername && password === validPassword) {
-                // Store the login state in local storage
-                localStorage.setItem('isLoggedIn', 'true');
-
-                // Redirect to home page
-                window.location.href = 'https://mlsapro.com/home';
-            } else {
-                // Display error message
-                document.getElementById('error-message').style.display = 'block';
-            }
-        });
-
-        // Check if the user is already logged in
-        window.addEventListener('DOMContentLoaded', function() {
-            if (localStorage.getItem('isLoggedIn') === 'true') {
-                // Redirect to home page
-                window.location.href = 'https://mlsapro.com/home';
-            }
-        });
-    </script>
-
+   
   </body>
 
 </html>
