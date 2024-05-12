@@ -93,20 +93,33 @@ body {
     <meta name="author" content="shahzal Rehman Official">
     <meta name="keywords" content="Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https:.//facebook.com/shahzal.rehman.official or https:.//facebook.com/shahzal.rehmani.official for inquiries.,Shahzal mlsapro,shahzal mlsa,shahzal rehman microsoft learn student ambassador,shahzal rehman official blogs,Shahzal Rehman, Microsoft Learn, Student Ambassador, tech enthusiast,Shahzal,shahzal,shahzal rehman,shahzal rehman official,Shahzal pictures,shahzal pictures,shahzal rehman pictures,shahzal rehman official pictures">
     <meta name="google-site-verification" content="google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7334601574145044"
+    <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    const accessToken = localStorage.getItem('accessToken');
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code');
+    
+    // Check if access token is present in local storage or in URL query params
+    if (!accessToken && !code) {
+      // Redirect the user to the Microsoft Azure AD login page
+      window.location.href = 'https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read';
+    } else if (code) {
+      // Handle the authentication callback and obtain the access token
+      // For example, send a request to your server to exchange the code for an access token
+      // Once you obtain the access token, store it in local storage
+      // Then, redirect the user back to the home page without the code in the URL
+      // For demonstration, I'm just removing the code from the URL here
+      const newUrl = window.location.href.split('?')[0];
+      window.history.replaceState({}, document.title, newUrl);
+      // You can also fetch the access token from your server and store it in local storage
+    }
+  });
+</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7334601574145044"
      crossorigin="anonymous"></script>
       <script async custom-element="amp-auto-ads"
         src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script><script>
-        // Check if the user is already authenticated
-        window.addEventListener('DOMContentLoaded', function() {
-            const accessToken = localStorage.getItem('accessToken');
-            if (!accessToken) {
-                // Redirect the user to the Microsoft Azure AD login page
-                window.location.href = 'https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read';
-            }
-        });
-    </script>
+</script>
       <amp-auto-ads type="adsense"
         data-ad-client="ca-pub-7334601574145044">
 </amp-auto-ads>
