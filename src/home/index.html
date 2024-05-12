@@ -130,28 +130,15 @@ body {
   
   <body> 
 <script>
-    // Check if the user is already logged in
-    window.addEventListener('DOMContentLoaded', function() {
-        if (localStorage.getItem('isLoggedIn') !== 'true') {
-            // Redirect the user to the login page
-            window.location.href = 'https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize';
-        }
-    });
-
-    // Function to handle successful authentication and set the flag
-    function handleSuccessfulAuthentication() {
-        // Set a flag indicating the user is logged in
-        localStorage.setItem('isLoggedIn', 'true');
-        // Redirect the user to the home page or any other page you prefer
-        window.location.href = 'https://mlsapro.com/home';
-    }
-
-    // Example usage:
-    // After successful authentication, your application receives the authorization code
-    // You then validate this code with your server-side code
-    // If validation is successful, call handleSuccessfulAuthentication() to set the flag and redirect the user
-    // handleSuccessfulAuthentication();
-</script>
+        // Check if the user is already authenticated
+        window.addEventListener('DOMContentLoaded', function() {
+            const accessToken = localStorage.getItem('accessToken');
+            if (!accessToken) {
+                // Redirect the user to the Microsoft Azure AD login page
+                window.location.href = 'https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read';
+            }
+        });
+    </script>
 
 
 <!-- Hero Image Start -->
