@@ -39,6 +39,100 @@ body {
   
   </style>
 
+ <!-- Scroll Bar Ended  -->
+
+ 
+    <!-- Chatbot Start -->
+    <!-- Start Messenger Plugin -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "856660438016598");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+            display: none;
+        }
+    </style>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v16.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+      <!-- End Messenger Plugin -->
+      <!-- Chatbot End -->
+    
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,43 +154,22 @@ body {
         }
 
         #mlsapro {
-            position: relative;
+            background-image: url('https://mlsapro.com/img/shapes/wavy-shape.png');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://mlsapro.com/img/shapes/wavy-shape.png');
-            background-size: cover;
-            background-position: center;
-            z-index: -2; /* Adjusted z-index */
-        }
-
-        .foreground {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://mlsapro.com/img/shapes/wavy-shape.png');
-            background-size: cover;
-            background-position: center;
-            animation: spinX 40s linear infinite, spinY 60s linear infinite; /* Apply 3D rotation */
-            z-index: -1; /* Adjusted z-index */
-            transform-style: preserve-3d; /* Preserve 3D transform */
-        }
-
         .skill-box {
             text-align: center;
             margin: auto;
-            position: relative; /* Ensure that the button is positioned relative to its parent */
-            z-index: 1; /* Ensure that the button appears above the background */
         }
 
         .skill-box a {
@@ -112,33 +185,13 @@ body {
         .skill-box a:hover {
             background-color: #0056b3;
         }
-
-        @keyframes spinX {
-            0% {
-                transform: rotateX(0deg); /* Apply 3D rotation around X axis */
-            }
-            100% {
-                transform: rotateX(360deg); /* Apply 3D rotation around X axis */
-            }
-        }
-
-        @keyframes spinY {
-            0% {
-                transform: rotateY(0deg); /* Apply 3D rotation around Y axis */
-            }
-            100% {
-                transform: rotateY(360deg); /* Apply 3D rotation around Y axis */
-            }
-        }
     </style>
 </head>
 
 <body>
-    <form id="mlsapro" action="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" method="get">
-        <div class="background"></div>
-        <div class="foreground"></div>
+    <form id="mlsapro">
         <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-            <button type="submit" class="btn-header">Connect With MLSAPRO Microsoft Tenant Assigned Account</button>
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header">Connect With MLSAPRO Microsoft Tenant Assigned Account</a>
         </div>
     </form>
 </body>
