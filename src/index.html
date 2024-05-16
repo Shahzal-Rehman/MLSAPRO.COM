@@ -41,71 +41,102 @@ body {
 
  <!-- Scroll Bar Ended  -->
 
-<!-- favicon  -->
-<link rel="shortcut icon" type="image/jpg" href="img\favicon\icon128.png"/>
-
-<!-- Scroll Bar  -->
-
-<style>
-
-body {
-    /* overlay scrollbar to transparent */
-    overflow: overlay;
-}
-
-  ::-webkit-scrollbar {
-    /* rounded thumb size : set as 20px */
-    width: 15px;
-    background-color: transparent;
-  }
-  
-  ::-webkit-scrollbar-track {
-  /* scroll bar traparent : initalizing colorless & border radius as zero */
-  border-radius: 0px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-  /* rounded thumb : Border Radius */
-  border-radius: 20px;
-
-  /* height of thumb */
-  height: 40px;
-
-  /* thumb color */
-  background-color:rgb(179,0,255); background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
-  }
-  
-  /* thumb hover color */
-  ::-webkit-scrollbar-thumb:hover {
-  background-color:rgb(179,0,255); background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%); 
-  }
-  
-  </style>
-
- <!-- Scroll Bar Ended  -->
-
  
+    <!-- Chatbot Start -->
+    <!-- Start Messenger Plugin -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "856660438016598");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+            display: none;
+        }
+    </style>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v16.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+      <!-- End Messenger Plugin -->
+      <!-- Chatbot End -->
+    
+
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shahzal Rehman,a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https:.//facebook.com/shahzal.rehman.official or https:.//facebook.com/shahzal.rehmani.official for inquiries.">
-    <meta name="author" content="Shahzal Rehman">
-     <meta name="author" content="Shahzal Rehman Official">
-      <meta name="google-adsense-account" content="ca-pub-7334601574145044">
-<meta name="author" content="shahzal">
-<meta name="author" content="shahzal rehman">
-    <meta name="author" content="shahzal Rehman Official">
-    <meta name="keywords" content="Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https:.//facebook.com/shahzal.rehman.official or https:.//facebook.com/shahzal.rehmani.official for inquiries.,Shahzal mlsapro,shahzal mlsa,shahzal rehman microsoft learn student ambassador,shahzal rehman official blogs,Shahzal Rehman, Microsoft Learn, Student Ambassador, tech enthusiast,Shahzal,shahzal,shahzal rehman,shahzal rehman official,Shahzal pictures,shahzal pictures,shahzal rehman pictures,shahzal rehman official pictures">
-    <meta name="google-site-verification" content="google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo">
-      <meta name="google-site-verification" content="Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo" />
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7334601574145044"
-     crossorigin="anonymous"></script>
-      <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahzal Rehman</title>
@@ -127,11 +158,9 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            perspective: 1000px; /* Add perspective */
         }
 
-        #mlsapro::before {
-            content: '';
+        .background {
             position: absolute;
             top: 0;
             left: 0;
@@ -140,8 +169,21 @@ body {
             background-image: url('https://mlsapro.com/img/shapes/wavy-shape.png');
             background-size: cover;
             background-position: center;
-            animation: spin 40s linear infinite, tiltX 60s linear infinite, tiltY 45s linear infinite; /* Apply multiple animations */
             z-index: -1;
+        }
+
+        .foreground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://mlsapro.com/img/shapes/wavy-shape.png');
+            background-size: cover;
+            background-position: center;
+            animation: spinX 40s linear infinite, spinY 60s linear infinite; /* Apply 3D rotation */
+            z-index: 1;
+            transform-style: preserve-3d; /* Preserve 3D transform */
         }
 
         .skill-box {
@@ -163,30 +205,21 @@ body {
             background-color: #0056b3;
         }
 
-        @keyframes spin {
+        @keyframes spinX {
             0% {
-                transform: rotate3d(1, 1, 1, 0deg); /* Apply 3D rotation */
+                transform: rotateX(0deg); /* Apply 3D rotation around X axis */
             }
             100% {
-                transform: rotate3d(1, 1, 1, 360deg); /* Apply 3D rotation */
+                transform: rotateX(360deg); /* Apply 3D rotation around X axis */
             }
         }
 
-        @keyframes tiltX {
-            0%, 100% {
-                transform: rotateX(0deg); /* Tilt around X axis */
+        @keyframes spinY {
+            0% {
+                transform: rotateY(0deg); /* Apply 3D rotation around Y axis */
             }
-            50% {
-                transform: rotateX(10deg); /* Tilt around X axis */
-            }
-        }
-
-        @keyframes tiltY {
-            0%, 100% {
-                transform: rotateY(0deg); /* Tilt around Y axis */
-            }
-            50% {
-                transform: rotateY(-10deg); /* Tilt around Y axis */
+            100% {
+                transform: rotateY(360deg); /* Apply 3D rotation around Y axis */
             }
         }
     </style>
@@ -194,6 +227,8 @@ body {
 
 <body>
     <form id="mlsapro" action="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" method="get">
+        <div class="background"></div>
+        <div class="foreground"></div>
         <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
             <button type="submit" class="btn-header">Connect With MLSAPRO Microsoft Tenant Assigned Account</button>
         </div>
