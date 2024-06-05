@@ -1,5 +1,5 @@
 Display name	Username	Password	Licenses
-user1 	user1@mlsapro.com	C/897416510616om	Unlicensed
+user1 	user1@mlsapro.com	C/897416510616om1	Unlicensed
 user2 	user2@mlsapro.com	W/377529387535aq	Unlicensed
 user3 	user3@mlsapro.com	N^166326979630oz	Unlicensed
 user4 	user4@mlsapro.com	Q*917018824981ur	Unlicensed
