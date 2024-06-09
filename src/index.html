@@ -60,8 +60,7 @@
     </style>
 </head>
 <body>
-    
-    <form id="mlsapro">
+   <form id="mlsapro">
         <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
             <a href="#" onclick="login()" class="login-btn">Login</a>
             <a href="#" onclick="signOut()" class="sign-out-btn">Sign Out</a>
@@ -89,7 +88,7 @@
             var scope = "user.read"; // Adjust scope as needed
             var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
             window.open(loginUrl, "_self"); // Open login URL in the current tab
-            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank"); // Open another tab
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank", "noopener,noreferrer"); // Open another tab
         }
 
         function signOut() {
