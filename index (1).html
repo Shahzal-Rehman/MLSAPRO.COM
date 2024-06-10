@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+    </script>
+</body>
+</html>

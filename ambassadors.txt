@@ -1,0 +1,5 @@
+all ambassadors 3920
+beta 2529
+pak beta 398
+gold 266
+gold pak 32

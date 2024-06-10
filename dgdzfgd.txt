@@ -1,0 +1,1986 @@
+﻿<a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+
+<script>
+    function signOut() {
+        // Construct the sign-out URL
+        var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+        var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+        var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+        var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+
+
+
+
+Chat history
+ChatGPT
+New chat
+
+Sign up or log in
+
+Get smarter responses, upload files and images, and more.
+
+
+Sign up
+
+Log in
+
+Close sidebar
+ChatGPT
+the background image is not showing and java to open additional tabs not working remove thse errors
+ChatGPT
+It sounds like you're encountering two separate issues: one with the background image not displaying and another with Java not opening additional tabs as expected. Let's address them one by one:
+
+Background image not showing:
+
+First, ensure that the path to the background image in your HTML or CSS code is correct. If the path is incorrect, the browser won't be able to locate and display the image.
+Check the file extension of the image file. Ensure that it's a commonly supported format like JPEG, PNG, or GIF.
+Make sure that the image file is accessible and hasn't been moved, deleted, or renamed.
+Check for any CSS rules that might be overriding the background image property. Use browser developer tools to inspect the element and see if there are any conflicting styles.
+Java not opening additional tabs:
+
+It seems like you're referring to JavaScript rather than Java. Java is a different programming language.
+If you're trying to open additional tabs using JavaScript, ensure that your code is correctly written. You can use the window.open() method to open new tabs. For example:
+javascript
+Copy code
+window.open('https://www.example.com', '_blank');
+Check if there are any errors in your JavaScript code. Use browser developer tools (usually accessible by pressing F12) to view the console and see if there are any error messages that might give you clues about what's going wrong.
+Make sure that any pop-up blockers in your browser aren't preventing the tabs from opening. Some browsers have strict pop-up blocking policies, especially for tabs opened without user interaction.
+If you can provide more specific details or code snippets related to these issues, I can offer more targeted assistance!
+
+
+<!-- favicon  -->
+<link rel="shortcut icon" type="image/jpg" href="img\favicon\icon128.png"/>
+
+<!-- Scroll Bar  -->
+
+<style>
+
+body {
+    /* overlay scrollbar to transparent */
+    overflow: overlay;
+}
+
+  ::-webkit-scrollbar {
+    /* rounded thumb size : set as 20px */
+    width: 15px;
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-track {
+  /* scroll bar traparent : initalizing colorless & border radius as zero */
+  border-radius: 0px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+  /* rounded thumb : Border Radius */
+  border-radius: 20px;
+
+  /* height of thumb */
+  height: 40px;
+
+  /* thumb color */
+  background-color:rgb(179,0,255); background: linear-gradient(90deg, rgba(179,0,255,1) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
+  }
+  
+  /* thumb hover color */
+  ::-webkit-scrollbar-thumb:hover {
+  background-color:rgb(179,0,255); background: linear-gradient(-90deg, rgba(179,0,255,1) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%); 
+  }
+  
+  </style>
+
+ <!-- Scroll Bar Ended  -->
+
+ 
+    <!-- Chatbot Start -->
+    <!-- Start Messenger Plugin -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "856660438016598");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-container h2 {
+            text-align: center;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+            display: none;
+        }
+    </style>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v16.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+      <!-- End Messenger Plugin -->
+      <!-- Chatbot End -->
+    
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title><script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+    </script>
+</body>
+
+ChatGPT
+It seems you're trying to set a background image dynamically based on whether the user is on a mobile device or not, and you're also trying to open additional tabs when a button is clicked. However, there are some issues in your code:
+
+Opening additional tabs: You're defining the openSecondTab() function, but it seems that you haven't actually called it anywhere. Additionally, you're defining openThirdTab() within openSecondTab() but not calling it at all. Make sure to call these functions when needed, like when a button is clicked.
+
+Background image: You're setting the background image dynamically based on whether the user is on a mobile device or not, but the logic for this seems incorrect. You're assigning the same background image URL to both cases. Ensure you're assigning the correct background image URL for each case.
+
+Here's the corrected version of your code:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab();
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+    </script>
+</body>
+</html>
+This code should fix the issues and correctly open additional tabs and set the background image based on the user's device.
+
+write in above stated manner means only first of all favicaon and and other scripts then html 
+ChatGPT
+Sure, here's the HTML code structured with the favicon and other scripts placed first:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file here -->
+</head>
+
+<body>
+    <!-- Your HTML content -->
+    <div id="fb-root"></div>
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
+
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab();
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+    </script>
+
+    <script src="your-script.js"></script> <!-- Link your JavaScript file here -->
+</body>
+
+</html>
+This structure places the favicon, CSS file link, and JavaScript files after the head tag and before the HTML content in the body tag. Adjust the file paths accordingly based on your project structure.
+
+in following tab with mvp community is opening but challenge link is not opening
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab();
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+    </script>
+</body>
+</html>
+ChatGPT
+It seems the issue might be related to the openThirdTab() function not being called properly. Let's adjust the code to ensure it's called correctly:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+    </script>
+</body>
+</html>
+Now, openThirdTab() function is properly called after openSecondTab(), ensuring that both links should open in new tabs.
+
+and also add button below the connect,etc to sign out
+ChatGPT
+Certainly! I'll add a button below the existing one to allow signing out. Here's the updated code:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+        <button class="sign-out-btn" onclick="signOut()">Sign Out</button>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+
+        function signOut() {
+            // Add sign-out logic here
+            alert("Signing out...");
+        }
+    </script>
+</body>
+</html>
+This code adds a new button styled similarly to the existing one below the "Connect" button, which triggers the signOut() function when clicked. You can add your sign-out logic inside this function.
+
+just like the url https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read
+there will be signing out url form that url from it
+ChatGPT
+To implement a sign-out functionality similar to the provided sign-in URL, you typically need to request a sign-out URL from the identity provider (Microsoft in this case) and then redirect the user to that URL when they click the "Sign Out" button.
+
+However, Microsoft does not provide a direct sign-out URL like they do for sign-in. Instead, you generally need to send a sign-out request to the authority's end session endpoint.
+
+Here's how you might implement this:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+        <a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+
+        function signOut() {
+            // Redirect to the sign-out URL
+            window.location.href = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+        }
+    </script>
+</body>
+</html>
+This code sets up a "Sign Out" button that, when clicked, will redirect the user to the Microsoft identity provider's end session endpoint, which should sign them out.
+
+nno give me that url means you genrate that sign out url which microsoft provides to us you use object id and others from below signing in url
+ChatGPT
+Got it, I misunderstood your request earlier. Microsoft does provide a way to sign out programmatically by sending a sign-out request to the authority's end session endpoint, however, it requires specific parameters. You typically don't use the same URL as the sign-in URL for sign-out.
+
+Here's a basic example of how you might construct a sign-out URL for Microsoft:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+        <a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+
+        function signOut() {
+            // Construct the sign-out URL
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+            var postLogoutRedirectUri = encodeURIComponent("https://mlsapro.com/logout"); // Redirect URL after sign-out
+            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+            // Redirect to the sign-out URL
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+In this code, replace "https://mlsapro.com/logout" with the URL you want the user to be redirected to after they sign out. This URL must be registered in the Microsoft Azure Portal as a valid redirect URI for your application.
+
+replace it team.mlsapro.com
+ChatGPT
+Certainly! Here's the updated code with the sign-out URL constructed to redirect to team.mlsapro.com after sign-out:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+        <a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+
+        function signOut() {
+            // Construct the sign-out URL
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+            var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+            // Redirect to the sign-out URL
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+Now, when a user clicks on the "Sign Out" button, they will be redirected to https://team.mlsapro.com.
+
+the third tab doesnot open is there any restriction on goolge that max of 2 tabs by domain
+ChatGPT
+There's no inherent restriction imposed by Google on the number of tabs a website can open. However, some browsers may have limitations on the number of tabs that can be opened programmatically through JavaScript, and this limit can vary depending on the browser and device.
+
+If the third tab is not opening, it could be due to browser settings, popup blockers, or security restrictions. To troubleshoot this:
+
+Check if the browser's popup blocker is enabled and blocking the opening of new tabs. You can try disabling the popup blocker temporarily to see if it resolves the issue.
+
+Verify that the URL being opened in the third tab is correctly formatted and does not violate any security policies. Ensure that the URL is accessible and does not trigger any security warnings.
+
+Test the code in different browsers to see if the issue is specific to a particular browser. Different browsers may have different behaviors when it comes to opening new tabs programmatically.
+
+Consider alternative approaches, such as opening the link in the same tab or using a modal window instead of a new tab, depending on your application's requirements and user experience considerations.
+
+By addressing these points, you can diagnose and potentially resolve the issue with opening the third tab.
+
+what is modal window
+ChatGPT
+A modal window is a type of user interface element that appears as a popup dialog box or overlay on top of the main content of a web page. It temporarily interrupts the user's workflow and requires them to interact with it before they can return to the main content.
+
+Modal windows are commonly used for:
+
+Displaying important information or alerts: Modal windows can be used to display critical messages, warnings, or notifications that require immediate attention from the user.
+
+Collecting user input: Modal windows can contain forms or input fields for gathering user input, such as login forms, registration forms, or feedback forms.
+
+Confirming actions: Modal windows can prompt the user to confirm or cancel an action before proceeding, such as confirming a deletion or confirming a purchase.
+
+Displaying additional content: Modal windows can display additional content, such as images, videos, or detailed information, without navigating away from the main page.
+
+Modal windows typically have a distinctive appearance, with a semi-transparent overlay that darkens the background content to draw attention to the modal itself. They often include a close button or a way to dismiss the modal to return to the main content.
+
+In web development, modal windows are usually implemented using HTML, CSS, and JavaScript. Libraries and frameworks like Bootstrap and jQuery also provide pre-built modal components that can be easily integrated into web applications.
+
+can you write whole sign out script and tag of button only here from
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+        <a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+
+        function signOut() {
+            // Construct the sign-out URL
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+            var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+            // Redirect to the sign-out URL
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+ChatGPT
+Sure, here's the code for the sign-out button along with the script:
+
+html
+Copy code
+<a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+
+<script>
+    function signOut() {
+        // Construct the sign-out URL
+        var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+        var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+        var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+        var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+        // Redirect to the sign-out URL
+        window.location.href = url;
+    }
+</script>
+You can place this code wherever you want the sign-out button to appear in your HTML document. This script constructs the sign-out URL and redirects the user to that URL when the sign-out button is clicked.
+
+this java is over means i am right the object id and others are not shown to user but works on their own selve
+ChatGPT
+Yes, you're correct. The JavaScript code provided is executed on the client-side, meaning it runs in the user's browser. The client-side code interacts with Microsoft services (like authentication and logout) using the OAuth 2.0 protocol.
+
+The client ID, redirect URI, and other parameters are used internally by the client-side code to communicate with Microsoft's authentication service. They are not exposed to the end-user.
+
+So, the user won't see these parameters or be able to manipulate them directly. They're essential for the authentication process to work securely and smoothly between your application and Microsoft's authentication service.
+
+can you just like provide me for login
+ChatGPT
+Certainly! Below is a basic example of how you can implement a login functionality using Microsoft authentication. This example uses the Microsoft Identity Platform (formerly Azure Active Directory) and OAuth 2.0 for authentication.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Microsoft</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="loginButton">Login with Microsoft</button>
+
+    <script>
+        $(document).ready(function() {
+            // Replace with your Azure Active Directory (AAD) Application ID
+            var clientId = "YOUR_CLIENT_ID_HERE";
+            
+            // Redirect URI where the user will be redirected after login
+            var redirectUri = "YOUR_REDIRECT_URI_HERE";
+            
+            // URL of the Microsoft Identity Platform authorization endpoint
+            var authorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+
+            // Construct the URL for authentication
+            var url = authorizationEndpoint + "?client_id=" + encodeURIComponent(clientId) +
+                      "&response_type=code&redirect_uri=" + encodeURIComponent(redirectUri) +
+                      "&scope=User.Read";
+
+            // Redirect the user to the authentication URL when the login button is clicked
+            $("#loginButton").click(function() {
+                window.location.href = url;
+            });
+        });
+    </script>
+</body>
+</html>
+In this example:
+
+Replace "YOUR_CLIENT_ID_HERE" with your Azure Active Directory (AAD) Application ID.
+Replace "YOUR_REDIRECT_URI_HERE" with the redirect URI you've configured in your AAD application settings.
+When the "Login with Microsoft" button is clicked, the user is redirected to the Microsoft Identity Platform authorization endpoint with the necessary parameters for authentication.
+Upon successful authentication, the user is redirected back to the specified redirect URI with an authorization code, which can then be exchanged for an access token to access Microsoft resources on behalf of the user. You would typically handle this exchange server-side.
+
+both login and logout functionality
+ChatGPT
+Sure, here's an example integrating both login and logout functionality:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Logout with Microsoft</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="loginButton">Login with Microsoft</button>
+    <button id="logoutButton" style="display: none;">Logout</button>
+
+    <script>
+        $(document).ready(function() {
+            // Replace with your Azure Active Directory (AAD) Application ID
+            var clientId = "YOUR_CLIENT_ID_HERE";
+            
+            // Redirect URI where the user will be redirected after login
+            var redirectUri = "YOUR_REDIRECT_URI_HERE";
+            
+            // URL of the Microsoft Identity Platform authorization endpoint
+            var authorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+
+            // URL of the Microsoft Identity Platform logout endpoint
+            var logoutEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+
+            // Construct the URL for authentication
+            var loginUrl = authorizationEndpoint + "?client_id=" + encodeURIComponent(clientId) +
+                          "&response_type=code&redirect_uri=" + encodeURIComponent(redirectUri) +
+                          "&scope=User.Read";
+
+            // Redirect the user to the authentication URL when the login button is clicked
+            $("#loginButton").click(function() {
+                window.location.href = loginUrl;
+            });
+
+            // Handle logout functionality
+            $("#logoutButton").click(function() {
+                // Redirect the user to the logout endpoint
+                window.location.href = logoutEndpoint;
+            });
+
+            // Check if the user is logged in by checking for the presence of an access token
+            var accessToken = sessionStorage.getItem("access_token");
+            if (accessToken) {
+                // User is logged in
+                $("#loginButton").hide();
+                $("#logoutButton").show();
+            } else {
+                // User is not logged in
+                $("#loginButton").show();
+                $("#logoutButton").hide();
+            }
+        });
+    </script>
+</body>
+</html>
+In this example:
+
+Replace "YOUR_CLIENT_ID_HERE" with your Azure Active Directory (AAD) Application ID.
+Replace "YOUR_REDIRECT_URI_HERE" with the redirect URI you've configured in your AAD application settings.
+The loginUrl variable constructs the URL for authentication, including the necessary parameters.
+When the "Login with Microsoft" button is clicked, the user is redirected to the Microsoft Identity Platform authorization endpoint.
+The logoutEndpoint variable specifies the URL for logout.
+When the "Logout" button is clicked, the user is redirected to the logout endpoint.
+The script checks if the user is logged in by checking for the presence of an access token in the session storage. If logged in, the "Logout" button is shown; otherwise, the "Login with Microsoft" button is shown.
+just like this a code with both but separate buttons
+<a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+
+<script>
+    function signOut() {
+        // Construct the sign-out URL
+        var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+        var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+        var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+        var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+        // Redirect to the sign-out URL
+        window.location.href = url;
+    }
+</script>
+ChatGPT
+Certainly! Here's a similar code structure with separate buttons for login and logout:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Logout with Microsoft</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="loginButton">Login with Microsoft</button>
+    <button id="logoutButton" style="display: none;">Logout</button>
+
+    <script>
+        $(document).ready(function() {
+            // Replace with your Azure Active Directory (AAD) Application ID
+            var clientId = "YOUR_CLIENT_ID_HERE";
+            
+            // Redirect URI where the user will be redirected after login
+            var redirectUri = "YOUR_REDIRECT_URI_HERE";
+            
+            // URL of the Microsoft Identity Platform authorization endpoint
+            var authorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+
+            // URL of the Microsoft Identity Platform logout endpoint
+            var logoutEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+
+            // Construct the URL for authentication
+            var loginUrl = authorizationEndpoint + "?client_id=" + encodeURIComponent(clientId) +
+                          "&response_type=code&redirect_uri=" + encodeURIComponent(redirectUri) +
+                          "&scope=User.Read";
+
+            // Redirect the user to the authentication URL when the login button is clicked
+            $("#loginButton").click(function() {
+                window.location.href = loginUrl;
+            });
+
+            // Handle logout functionality
+            $("#logoutButton").click(function() {
+                // Construct the sign-out URL
+                var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+                var url = logoutEndpoint + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+                // Redirect to the sign-out URL
+                window.location.href = url;
+            });
+
+            // Check if the user is logged in by checking for the presence of an access token
+            var accessToken = sessionStorage.getItem("access_token");
+            if (accessToken) {
+                // User is logged in
+                $("#loginButton").hide();
+                $("#logoutButton").show();
+            } else {
+                // User is not logged in
+                $("#loginButton").show();
+                $("#logoutButton").hide();
+            }
+        });
+    </script>
+</body>
+</html>
+In this code:
+
+The "Login with Microsoft" button triggers the login process, redirecting the user to the authentication URL.
+The "Logout" button triggers the logout process, redirecting the user to the logout endpoint.
+The JavaScript code checks if the user is logged in based on the presence of an access token. If logged in, it shows the "Logout" button; otherwise, it shows the "Login with Microsoft" button.
+with all object id and redirect as above stawee
+ChatGPT
+Certainly! Below is an example integrating login and logout functionality with all necessary parameters:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Logout with Microsoft</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="loginButton">Login with Microsoft</button>
+    <button id="logoutButton" style="display: none;">Logout</button>
+
+    <script>
+        $(document).ready(function() {
+            // Replace with your Azure Active Directory (AAD) Application ID
+            var clientId = "YOUR_CLIENT_ID_HERE";
+            
+            // Redirect URI where the user will be redirected after login
+            var redirectUri = encodeURIComponent("https://mlsapro.com/home");
+            
+            // URL of the Microsoft Identity Platform authorization endpoint
+            var authorizationEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+
+            // URL of the Microsoft Identity Platform logout endpoint
+            var logoutEndpoint = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+
+            // Construct the URL for authentication
+            var loginUrl = authorizationEndpoint + "?client_id=" + encodeURIComponent(clientId) +
+                          "&response_type=code&redirect_uri=" + redirectUri +
+                          "&scope=User.Read";
+
+            // Redirect the user to the authentication URL when the login button is clicked
+            $("#loginButton").click(function() {
+                window.location.href = loginUrl;
+            });
+
+            // Handle logout functionality
+            $("#logoutButton").click(function() {
+                // Construct the sign-out URL
+                var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+                var url = logoutEndpoint + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+                // Redirect to the sign-out URL
+                window.location.href = url;
+            });
+
+            // Check if the user is logged in by checking for the presence of an access token
+            var accessToken = sessionStorage.getItem("access_token");
+            if (accessToken) {
+                // User is logged in
+                $("#loginButton").hide();
+                $("#logoutButton").show();
+            } else {
+                // User is not logged in
+                $("#loginButton").show();
+                $("#logoutButton").hide();
+            }
+        });
+    </script>
+</body>
+</html>
+In this code:
+
+Replace "YOUR_CLIENT_ID_HERE" with your Azure Active Directory (AAD) Application ID.
+Replace "https://mlsapro.com/home" with your redirect URI after login.
+The "Login with Microsoft" button triggers the login process, redirecting the user to the authentication URL.
+The "Logout" button triggers the logout process, redirecting the user to the logout endpoint.
+The JavaScript code checks if the user is logged in based on the presence of an access token. If logged in, it shows the "Logout" button; otherwise, it shows the "Login with Microsoft" button.
+suse my above given client id, object id, tenant id and other para
+ChatGPT
+Sure, here's the updated code with your provided parameters:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Logout with Microsoft</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <button id="loginButton">Login with Microsoft</button>
+    <button id="logoutButton" style="display: none;">Logout</button>
+
+    <script>
+        $(document).ready(function() {
+            // Replace with your Azure Active Directory (AAD) Application ID
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+            
+            // Replace with your Azure Active Directory (AAD) Tenant ID
+            var tenantId = "5db603e4-5a09-41bf-a36d-618c9e6bf0d0";
+            
+            // Replace with your Azure Active Directory (AAD) Object ID
+            var objectId = "YOUR_OBJECT_ID_HERE";
+            
+            // Redirect URI where the user will be redirected after login
+            var redirectUri = encodeURIComponent("https://mlsapro.com/home");
+            
+            // URL of the Microsoft Identity Platform authorization endpoint
+            var authorizationEndpoint = "https://login.microsoftonline.com/" + tenantId + "/oauth2/v2.0/authorize";
+
+            // URL of the Microsoft Identity Platform logout endpoint
+            var logoutEndpoint = "https://login.microsoftonline.com/" + tenantId + "/oauth2/v2.0/logout";
+
+            // Construct the URL for authentication
+            var loginUrl = authorizationEndpoint + "?client_id=" + encodeURIComponent(clientId) +
+                          "&response_type=code&redirect_uri=" + redirectUri +
+                          "&scope=User.Read";
+
+            // Redirect the user to the authentication URL when the login button is clicked
+            $("#loginButton").click(function() {
+                window.location.href = loginUrl;
+            });
+
+            // Handle logout functionality
+            $("#logoutButton").click(function() {
+                // Construct the sign-out URL
+                var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+                var url = logoutEndpoint + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+                // Redirect to the sign-out URL
+                window.location.href = url;
+            });
+
+            // Check if the user is logged in by checking for the presence of an access token
+            var accessToken = sessionStorage.getItem("access_token");
+            if (accessToken) {
+                // User is logged in
+                $("#loginButton").hide();
+                $("#logoutButton").show();
+            } else {
+                // User is not logged in
+                $("#loginButton").show();
+                $("#logoutButton").hide();
+            }
+        });
+    </script>
+</body>
+</html>
+Make sure to replace "YOUR_OBJECT_ID_HERE" with your Azure Active Directory (AAD) Object ID. Additionally, ensure that the redirect URI matches the one configured in your Azure Active Directory application settings.
+
+and just like e on microsoft learn there is button my aaccount upon which clikc the modal like window or aother is shown that startes logged in account mail and name of user
+ChatGPT
+To create a modal window that displays the logged-in user's email and name when a button is clicked, you can use HTML, CSS, and JavaScript. Here's a basic example of how you can achieve this:
+
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Button to open modal -->
+    <button id="openModalButton">My Account</button>
+
+    <!-- Modal -->
+    <div id="userAccountModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>User Account Details</h2>
+            <p><strong>Name:</strong> <span id="userName"></span></p>
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+JavaScript (script.js):
+
+javascript
+Copy code
+// Get the modal
+var modal = document.getElementById("userAccountModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("openModalButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+    // Replace with the user's name and email
+    document.getElementById("userName").textContent = "John Doe";
+    document.getElementById("userEmail").textContent = "john@example.com";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+This code creates a modal window that displays the user's name and email when the "My Account" button is clicked. You can replace the static name and email values with the actual user data retrieved from your authentication system.
+
+the logged in user with microsoft login understandintegrate that with just like below html when signed in the login in fo is used by  it and it show the user aaccount and others 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <a href="https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read" class="btn-header" onclick="openSecondTab()">Connect With MLSAPRO Microsoft Tenant Assigned Account&shahzalshare.txt along with sr.xml </a>
+        </div>
+        <a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
+            for (var i = 0; i < images.length; i++) {
+                var img = new Image();
+                img.src = images[i];
+            }
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
+        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+
+        function openSecondTab() {
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank");
+            openThirdTab(); // Call openThirdTab function here
+        }
+
+        function openThirdTab() {
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank");
+        }
+
+        function signOut() {
+            // Construct the sign-out URL
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
+            var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+
+            // Redirect to the sign-out URL
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
+ChatGPT
+To integrate Microsoft login with the provided HTML code, you'll need to modify the code to authenticate users with Microsoft, retrieve their information, and display it in the modal window. Here's how you can do it:
+
+Add Microsoft authentication functionality using the Microsoft Authentication Library (MSAL).
+Retrieve the user's information (such as name and email) after successful authentication.
+Display the user's information in the modal window when the "My Account" button is clicked.
+Here's the modified code:
+
+HTML:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <script src="https://alcdn.msauth.net/browser/2.20.0/js/msal-browser.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #mlsapro {
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Added to align buttons vertically */
+        }
+
+        .skill-box {
+            text-align: center;
+            margin: auto;
+        }
+
+        .skill-box a,
+        .sign-out-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px; /* Added for spacing */
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-box a:hover,
+        .sign-out-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <button id="openModalButton" class="btn-header">My Account</button>
+        </div>
+        <a href="#" class="sign-out-btn" onclick="signOut()">Sign Out</a>
+    </form>
+
+    <!-- Modal -->
+    <div id="userAccountModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>User Account Details</h2>
+            <p><strong>Name:</strong> <span id="userName"></span></p>
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Configuration for MSAL
+        const msalConfig = {
+            auth: {
+                clientId: "9ec16646-a913-4fdb-8249-08fb1d98b99d",
+                authority: "https://login.microsoftonline.com/common",
+                redirectUri: window.location.origin
+            }
+        };
+
+        // MSAL instance
+        const myMSALObj = new msal.PublicClientApplication(msalConfig);
+
+        // Request configuration
+        const request = {
+            scopes: ["openid", "profile", "email"],
+        };
+
+        // Login function
+        function signIn() {
+            myMSALObj.loginPopup(request)
+                .then(response => {
+                    // Call getUserInfo function after successful login
+                    getUserInfo(response.account);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+
+        // Get user info function
+        function getUserInfo(account) {
+            const accessTokenRequest = {
+                scopes: ["User.Read"],
+                account: account
+            };
+
+            myMSALObj.acquireTokenSilent(accessTokenRequest)
+                .then(response => {
+                    // Fetch user info using access token
+                    fetchUserInfo(response.accessToken);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+
+        // Fetch user info
+        function fetchUserInfo(accessToken) {
+            fetch("https://graph.microsoft.com/v1.0/me", {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display user info in modal
+                    document.getElementById("userName").textContent = data.displayName;
+                    document.getElementById("userEmail").textContent = data.mail;
+                    // Show modal
+                    document.getElementById("userAccountModal").style.display = "block";
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+
+        // Sign out function
+        function signOut() {
+            const logoutRequest = {
+                account: myMSALObj.getAccount()
+            };
+
+            myMSALObj.logout(logoutRequest);
+        }
+
+        // Close modal when user clicks on <span> (x)
+        document.getElementsByClassName("close")[0].onclick = function() {
+            document.getElementById("userAccountModal").style.display = "none";
+        }
+
+        // Close modal when user clicks anywhere outside of the modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("userAccountModal")) {
+                document.getElementById("userAccountModal").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+This code integrates Microsoft login functionality using MSAL (Microsoft Authentication Library) for JavaScript. When the user clicks on the "My Account" button, it opens a modal window displaying the user's name and email after successful authentication. The "Sign Out" button logs the user out of the application.
+
+
+Message ChatGPT
+
+ChatGPT can make mistakes. Check important info.
+?
+
+
+        // Redirect to the sign-out URL
+        window.location.href = url;
+    }
+</script>
