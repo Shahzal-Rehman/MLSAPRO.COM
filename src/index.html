@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahzal Rehman</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
-   
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,10 +61,11 @@
 </head>
 <body>
    <form id="mlsapro">
-        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-            <a href="#" onclick="login()" class="login-btn">Connect With MLSAPRO Microsoft Tenant Assigned Account & shahzalshare.txt along with sr.xml</a><br><br><br><br>
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"> <br>
+               <a href="#" onclick="login()" class="login-btn">Connect With MLSAPRO Microsoft Tenant Assigned Account & shahzalshare.txt along with sr.xml</a><br><br><br><br>
             <a href="#" onclick="signOut()" class="sign-out-btn">Sign Out</a><br><br><br><br>
             <a href="#" onclick="openWhatsApp()" class="whatsapp-btn">Login with WhatsApp</a>
+
         </div>
     </form>
 
@@ -99,8 +100,7 @@ window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-7
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
             var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
             window.location.href = url;
-        }
-         function openWhatsApp() {
+                 function openWhatsApp() {
             var urls = [
                 "https://chat.whatsapp.com/Djp2Wfn7gjT5x5MuYSuclt",
                 "https://chat.whatsapp.com/GZWAi6ea7mh0IVpnACMh3t",
@@ -111,7 +111,7 @@ window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-7
             urls.forEach(function(url) {
                 window.open(url, "_blank", "noopener,noreferrer");
             });
-        }
+}
     </script>
 </body>
 </html>
