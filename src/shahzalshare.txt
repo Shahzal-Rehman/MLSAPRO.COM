@@ -16,3 +16,5 @@ if ($connectTestResult.TcpTestSucceeded) {
 
 mac
 open smb://shahzal:ionU5HbPUFtqNrxHFbqLqvuVcxNatOx8cVf8Zk8le%2BLVbUcpxyVFx68SV8nMTeSNDPiqxjMjijJE%2BAStiQNggw%3D%3D@shahzal.file.core.windows.net/shahzal
+powershell for vm
+az vm start --resource-group sr0302 --name SREHMAN0302 --subscription f2668df2-1b2a-476b-84f4-1e12cc0d990d
