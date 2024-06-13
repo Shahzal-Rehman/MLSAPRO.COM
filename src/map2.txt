@@ -1,0 +1,285 @@
+﻿Apologies for that oversight. Let me revise the list and ensure that all files are included. Here's the updated list:
+
+**mlsapro/**
+- .github/
+  - workflows/
+    - azure-static-web-apps-black-bush-0cb3dba10.yml
+    - jekyll-gh-pages.yml
+    - srchacker-AutoDeployTrigger-d287f809-79c4-42ef-92ce-8d753daf93bf.yml
+- src 
+- 1713022574571.jpg
+- 435328187_852554636916558_767289848379708560_n.jpg
+- 68357385_121241632525475_117936709571706880_n.jpg
+- Book1.xlsx
+- Book2.xlsx
+- Book3%201.xlsx
+- Book3.xlsx
+- Book4.xlsx
+- Book5.xlsx
+- Book6.xlsx
+- Book7.xlsx
+- Copy%20of%20Book2.xlsx
+- Copy%20of%20Book4%20%281%29.xlsx
+- Copy%20of%20Book4%20%282%29%20%281%29.xlsx
+- Copy%20of%20Book4%20%282%29.xlsx
+- Copy%20of%20Book4.xlsx
+- LICENSE
+- README.md
+- Youngest%20Microsoft%20Pro%20at%2015%21.mp4
+- ads.txt
+- connectsrproducts.ps1
+- dgbsfsdbvg.txt
+- gold.txt
+- google36e44d4403bad7dc.html
+- index.html
+- intro.pdf
+- intro.txt
+- introduction.wma
+- links.txt
+- mlsa.txt
+- pass.txt
+- password%20for%20worksheets.xlsx
+- pgc.png
+- shahzalshare.txt
+- sitemap.xml
+- sr.xml
+- vsadfa.txt
+- wa.txt
+
+**mlsapro.com/blogs/**
+- image1.jpg
+- image10.jpg
+- image11.jpg
+- image2.jpg
+- image3.jpg
+- image4.jpeg
+- image5.jpg
+- image6.jpg
+- image7.jpg
+- image8.jpg
+- image9.jpg
+- index.html
+
+**mlsapro.com/contact/**
+- index.html
+
+**mlsapro.com/css/**
+- animate.css
+- new/
+- style.css
+
+**mlsapro.com/home/**
+- connectsrproducts.ps1
+- index.html
+- shahzalshare.txt
+- sr.xml
+
+**mlsapro.com/js/**
+- app.js
+- isotope.pkgd.min.js
+- new/
+- script.js
+
+**mlsapro.com/pgc/**
+- 1.jpg
+- 10.jpg
+- 11.jpg
+- 12.jpg
+- 2.jpg
+- 20240502_103427_001.jpg
+- 20240502_103430_001.jpg
+- 3.jpg
+- 4.jpg
+- 5.jpg
+- 6.jpg
+- 7.jpg
+- 8.jpg
+- 9.jpg
+- Copy%20of%20Untitled.jpg
+- Copy%20of%20Untitled.png
+- Download%20Folio%20%282%29.png
+- Download%20Folio.png
+- High_resolution_wallpaper_background_ID_77700402633-optimized.jpg
+- MSLearn_SA_Basic_DKGry_Desktop%5B1%5D.png
+- Presentation1%20%282%29.pptx
+- Presentation1%20%288%29.pptx
+- Presentation1%20%289%29.pptx
+- Presentation1.pptx
+- RWP78i.jpg
+- SR-Prize%202.jpg
+- SR-Prize%203.jpg
+- SR-Prize.jpg
+- Snapchat-1026403853.jpg
+- Snapchat-1042884487.jpg
+- Snapchat-1188299497.jpg
+- Snapchat-1220614555.mp4
+- ...
+
+**mlsapro.com/sign/**
+- 1.png
+- 2.png
+- 3.png
+- 4.png
+- 5.png
+- 6.png
+- 7.png
+- 8.png
+- 9.png
+- 10.png
+- 11.png
+- 12.png
+- 13.png
+- 14.png
+- 15.png
+- 16.png
+- 17.png
+- 18.png
+- 19.png
+- 20.png
+- 21.png
+- 22.png
+- 23.png
+- 24.png
+- 25.png
+- 26.png
+- 27.png
+
+**mlsapro.com/img/**
+- Book1.xlsx
+- Book2.xlsx
+- Book3%201.xlsx
+- Book3.xlsx
+- Book4.xlsx
+- Book5.xlsx
+- Book6.xlsx
+- Book7.xlsx
+- Copy%20of%20Book2.xlsx
+- Copy%20of%20Book4%20%281%29.xlsx
+- Copy%20of%20Book4%20%282%29%20%281%29.xlsx
+- Copy%20of%20Book4%20%282%29.xlsx
+- Copy%20of%20Book4.xlsx
+- Gradient.png
+- about.png
+- app-icon.png
+- certify.png
+- code-icon.png
+- contact-bg.png
+- design-icon.png
+- image1.jpg
+- image10.jpg
+- image11.jpg
+- image2.jpg
+- image3.jpg
+- image4.jpeg
+- image5.jpg
+- image6.jpg
+- image7.jpg
+- image8.jpg
+- image9.jpg
+- imagef1.jpg
+- imahge3.jpg
+- logo.png
+- map.png
+- my%20projects123344r4r354.gif
+- new/
+- output-onlinegiftools%20%281%29.gif
+- password%20for%20worksheets.xlsx
+- person.png
+- testi1.png
+- testi.png
+- vsaddfvuyiussaug-reduced.gif
+- zdfcxv%20zfvbghnfgd-without.gif
+
+**mlsapro.com/img/favicon/**
+- icon128.png
+- icon16.png
+- icon19.png
+- icon48.png
+
+**mlsapro.com/img/myblog/**
+- blog1.png
+- blog2.png
+- blog3.png
+- image.png
+
+**mlsapro.com/img/shapes/**
+- circle.png
+- half-circle.png
+- letters.png
+- logo.png
+- new/
+- points1.png
+- points2.png
+- points3.png
+- points4.png
+- square.png
+- triangle.png
+- wave.png
+- wavy-shape.png
+- wavy-shape1.png
+- x.png
+
+**mlsapro/**
+- 1.jpg
+- 10.jpg
+- 2.jpg
+- 20240502_103427_001.jpg
+- 20240502_103430_001.jpg
+- 3.jpg
+- 4.jpg
+- 5.jpg
+- 6.jpg
+- 7.jpg
+- 8.jpg
+- 9.jpg
+- Blue%20Neon%20Background%20wallpaper%20Blue%20Neon%20Background%20hd%20wallpaper.jpg
+- CGHBDFGV.png
+- Chrome%20Passwords-final.csv
+- Copy%20of%20Untitled.jpg
+- Copy%20of%20Untitled.png
+- Download%20Folio%20(2).png
+- Download%20Folio.png
+- Google%20Passwords%20(2).csv
+- Google%20Passwords-%20finals.csv
+- Google%20Passwords.csv
+- HD-wallpaper-tribal-eagle-abstract-art-black-design-eagle-tattoo-tribal-vector.jpg
+- High_resolution_wallpaper_background_ID_77700402633-optimized.jpg
+- LICENSE.md
+- MSLearn_SA_Basic_DKGry_Desktop[1]%20(1).png
+- MSLearn_SA_Basic_DKGry_Desktop[1].png
+- MSLearn_SA_Basic_DKGry_Teams[1].png
+- Presentation1%20(2).pptx
+- Presentation1%20(4).pptx
+- Presentation1%20(8).pptx
+- Presentation1%20(9).pptx
+- README.md
+- RWP78i.jpg
+- SECURITY.md
+- ShareScreenshot.png
+- Snapchat-1042884487.jpg
+- Snapchat-1188299497.jpg
+- Snapchat-1220614555.mp4
+- Snapchat-1346774720.mp4
+- Snapchat-1362248822.mp4
+- Snapchat-1399500082.jpg
+- Snapchat-1514420008.jpg
+- Snapchat-1677654702.jpg
+- Snapchat-1858527933.jpg
+- Snapchat-1972994149.jpg
+- Snapchat-2042058783.jpg
+- Snapchat-206281224.jpg
+- Snapchat-577952227.jpg
+- Snapchat-800779974.jpg
+- SportsMainToNotesBackground_PAL.wmv
+- Teams-background_MS-Ignite_v02_A.png
+- Untitled.png
+- ambassadors.txt
+- audio%20final.png
+- audio.png
+- bandicam-2024-05-28-09-53-47-776.mp4
+- bcfgxhdf.png
+- bcgzx.png
+- bdfg.png
+- bookmarks_25_05_2024.html
+- bxcb%20-%20Copy%20-%20Copy.png
+-
