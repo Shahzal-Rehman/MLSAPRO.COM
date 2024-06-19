@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shahzal Rehman</title>
     <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +30,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column; /* Added to align buttons vertically */
+            flex-direction: column;
         }
 
         .skill-box {
@@ -41,10 +40,11 @@
 
         .skill-box a,
         .login-btn,
-        .sign-out-btn {
+        .sign-out-btn,
+        .whatsapp-btn {
             display: inline-block;
             padding: 10px 20px;
-            margin: 5px; /* Added for spacing */
+            margin: 5px;
             background-color: #007bff;
             color: #fff;
             text-decoration: none;
@@ -54,18 +54,22 @@
 
         .skill-box a:hover,
         .login-btn:hover,
-        .sign-out-btn:hover {
+        .sign-out-btn:hover,
+        .whatsapp-btn:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
-<body>
-   <form id="mlsapro">
-        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;"> <br>
-               <a href="#" onclick="login()" class="login-btn">Connect With MLSAPRO Microsoft Tenant Assigned Account & shahzalshare.txt along with sr.xml</a><br><br><br><br>
-            <a href="#" onclick="signOut()" class="sign-out-btn">Sign Out</a><br><br><br><br>
-            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn">Login with WhatsApp</a>
 
+<body>
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+            <br>
+            <a href="#" onclick="login()" class="login-btn">Connect With MLSAPRO Microsoft Tenant Assigned Account & shahzalshare.txt along with sr.xml</a>
+            <br><br><br><br>
+            <a href="#" onclick="signOut()" class="sign-out-btn">Sign Out</a>
+            <br><br><br><br>
+            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn">Login with WhatsApp</a>
         </div>
     </form>
 
@@ -84,19 +88,19 @@
         document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
 
         function login() {
-            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
-            var redirectUri = encodeURIComponent("https://mlsapro.com/home"); // Redirect URL after login
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+            var redirectUri = encodeURIComponent("https://mlsapro.com/home");
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
-            var scope = "user.read"; // Adjust scope as needed
+            var scope = "user.read";
             var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
-            window.open(loginUrl, "_self"); // Open login URL in the current tab
-            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank", "noopener,noreferrer"); // Open another tab
-window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank", "noopener,noreferrer"); // Open another tab
+            window.open(loginUrl, "_self");
+            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank", "noopener,noreferrer");
+            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank", "noopener,noreferrer");
         }
 
         function signOut() {
-            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d"; // Your client ID
-            var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com"); // Redirect URL after sign-out
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+            var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com");
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
             var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
             window.location.href = url;
@@ -107,8 +111,8 @@ window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-7
                 "https://chat.whatsapp.com/Djp2Wfn7gjT5x5MuYSuclt",
                 "https://chat.whatsapp.com/GZWAi6ea7mh0IVpnACMh3t",
                 "https://chat.whatsapp.com/KcKHRbjuSAo7NbBuZEf6GI",
-                "https://mlsapro.com/Youngest%20Microsoft%20Pro%20at%2015!.mp4"
-                "https://mlsapro.com/deck.pptx" 
+                "https://mlsapro.com/Youngest%20Microsoft%20Pro%20at%2015!.mp4",
+                "https://mlsapro.com/deck.pptx"
             ];
 
             urls.forEach(function(url) {
@@ -117,4 +121,5 @@ window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-7
         }
     </script>
 </body>
+
 </html>
