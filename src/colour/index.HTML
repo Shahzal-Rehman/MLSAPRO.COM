@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        #file-input {
+            margin-bottom: 20px;
+        }
+        #image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #image-preview {
+            max-width: 100%;
+            height: auto;
+        }
+        .color-picker {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .color-box {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        .color-box.selected {
+            border-color: #000;
+        }
+        .color-code-input {
+            margin-top: 10px;
+            width: 150px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="image-container">
+            <input type="file" id="file-input">
+            <canvas id="image-preview"></canvas>
+            <div class="color-picker" id="color-picker"></div>
+            <input type="text" id="color-code" class="color-code-input" placeholder="Enter color code...">
+        </div>
+    </div>
+
+    <script>
+        let originalImage = null;
+        let imageData = null;
+        let ctx = null;
+        let colors = [
+            '#ffffff', '#000000', '#ff0000', '#00ff00', '#0000ff', '#ffff00',
+            '#ff00ff', '#00ffff', '#ff9900', '#9900ff', '#ffcc00', '#cc00ff',
+            '#ff6666', '#66ff66', '#6666ff', '#ffff66', '#ff66ff', '#66ffff',
+            '#cccccc', '#999999', '#666666', '#333333', '#cccc00', '#cc00cc',
+            // Add more colors as needed
+            // Example: '#ffcccc', '#ccffcc', '#ccccff', ...
+        ];
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.getElementById('image-preview');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                        showColorPicker();
+                    };
+                    img.src = e.target.result;
+                    originalImage = img;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function showColorPicker() {
+            const colorPicker = document.getElementById('color-picker');
+            colorPicker.innerHTML = '';
+            colors.forEach(color => {
+                const colorBox = document.createElement('div');
+                colorBox.classList.add('color-box');
+                colorBox.style.backgroundColor = color;
+                colorBox.addEventListener('click', () => selectColor(color));
+                colorPicker.appendChild(colorBox);
+            });
+        }
+
+        function selectColor(color) {
+            const rgbColor = hexToRgb(color);
+            applyColorFilter(rgbColor);
+        }
+
+        function applyColorFilter(color) {
+            const filteredData = ctx.createImageData(imageData.width, imageData.height);
+            const data = imageData.data;
+            const filtered = filteredData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                filtered[i] = color.r;
+                filtered[i + 1] = color.g;
+                filtered[i + 2] = color.b;
+                filtered[i + 3] = data[i + 3]; // Preserve alpha channel
+            }
+
+            ctx.putImageData(filteredData, 0, 0);
+        }
+
+        function hexToRgb(hex) {
+            const bigint = parseInt(hex.substring(1), 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = bigint & 255;
+            return { r, g, b };
+        }
+
+        document.getElementById('file-input').addEventListener('change', previewImage);
+
+        document.getElementById('color-code').addEventListener('change', function() {
+            const colorCode = this.value.trim();
+            if (colorCode.match(/^#[0-9A-F]{6}$/i)) {
+                selectColor(colorCode.toLowerCase());
+            } else {
+                alert('Invalid color code. Please enter a valid hex color code (e.g., #RRGGBB)');
+            }
+        });
+    </script>
+</body>
+</html>
