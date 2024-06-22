@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Effects App</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .input-container label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .image-preview {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Effects App</h1>
+    <div class="container">
+        <div class="input-container">
+            <label for="upload-file">Upload Image:</label>
+            <input type="file" id="upload-file" accept="image/*" required>
+        </div>
+        <div class="input-container">
+            <label for="effect-type">Select Effect:</label>
+            <select id="effect-type">
+                <option value="grayscale">Grayscale</option>
+                <option value="invert">Invert Colors</option>
+                <option value="edge">Edge Detection</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="button-container">
+            <button onclick="applyEffect()">Apply Effect</button>
+            <a id="download-link" style="display: none;" download="processed_image.png">Download Processed Image</a>
+        </div>
+    </div>
+    <canvas id="image-canvas" class="image-preview" style="display: none;"></canvas>
+
+    <script>
+        function applyEffect() {
+            const fileInput = document.getElementById('upload-file');
+            const effectType = document.getElementById('effect-type').value;
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select an image file.');
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.getElementById('image-canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    // Draw original image on canvas
+                    ctx.drawImage(img, 0, 0);
+
+                    // Get image data from canvas
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+
+                    // Apply selected effect
+                    if (effectType === 'grayscale') {
+                        applyGrayscale(data);
+                    } else if (effectType === 'invert') {
+                        applyInvert(data);
+                    } else if (effectType === 'edge') {
+                        applyEdgeDetection(data);
+                    }
+
+                    // Display processed image
+                    canvas.style.display = 'block';
+
+                    // Show download link
+                    const downloadLink = document.getElementById('download-link');
+                    downloadLink.href = canvas.toDataURL('image/png');
+                    downloadLink.style.display = 'inline-block';
+                };
+                img.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        function applyGrayscale(data) {
+            for (let i = 0; i < data.length; i += 4) {
+                const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                data[i] = avg;       // Red channel
+                data[i + 1] = avg;   // Green channel
+                data[i + 2] = avg;   // Blue channel
+            }
+            const canvas = document.getElementById('image-canvas');
+            canvas.getContext('2d').putImageData(new ImageData(data, canvas.width, canvas.height), 0, 0);
+        }
+
+        function applyInvert(data) {
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 255 - data[i];     // Red channel
+                data[i + 1] = 255 - data[i + 1]; // Green channel
+                data[i + 2] = 255 - data[i + 2]; // Blue channel
+            }
+            const canvas = document.getElementById('image-canvas');
+            canvas.getContext('2d').putImageData(new ImageData(data, canvas.width, canvas.height), 0, 0);
+        }
+
+        function applyEdgeDetection(data) {
+            const threshold = 30; // Adjust threshold for edge detection
+            for (let i = 0; i < data.length; i += 4) {
+                const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                const val = avg > threshold ? 255 : 0;
+                data[i] = val;       // Red channel
+                data[i + 1] = val;   // Green channel
+                data[i + 2] = val;   // Blue channel
+            }
+            const canvas = document.getElementById('image-canvas');
+            canvas.getContext('2d').putImageData(new ImageData(data, canvas.width, canvas.height), 0, 0);
+        }
+    </script>
+</body>
+</html>
