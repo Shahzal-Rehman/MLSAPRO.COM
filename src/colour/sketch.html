@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sketch Converter</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #processed-image {
+            margin-top: 20px;
+            max-width: 100%;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload and Convert Image to Sketch</h1>
+    <input type="file" id="upload-file" accept="image/*" required>
+    <button onclick="convertToSketch()">Convert to Sketch</button>
+    <canvas id="processed-image"></canvas>
+    <a id="download-link" style="display: none;" download="sketch_image.png">Download Sketch</a>
+
+    <script>
+        function convertToSketch() {
+            const fileInput = document.getElementById('upload-file');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select an image file.');
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.getElementById('processed-image');
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    // Draw original image on canvas
+                    ctx.drawImage(img, 0, 0);
+
+                    // Get image data from canvas
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    const data = imageData.data;
+
+                    // Apply edge detection (simple edge detection effect)
+                    const threshold = 30; // Adjust threshold for edge detection
+                    for (let i = 0; i < data.length; i += 4) {
+                        const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                        const val = avg > threshold ? 255 : 0;
+                        data[i] = val;       // Red channel
+                        data[i + 1] = val;   // Green channel
+                        data[i + 2] = val;   // Blue channel
+                    }
+                    ctx.putImageData(imageData, 0, 0);
+
+                    // Show processed image
+                    canvas.style.display = 'block';
+
+                    // Show download link
+                    const downloadLink = document.getElementById('download-link');
+                    downloadLink.href = canvas.toDataURL('image/png');
+                    downloadLink.style.display = 'block';
+                };
+                img.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>
