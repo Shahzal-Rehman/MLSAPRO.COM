@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Picker with Custom Blending</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        #file-input, #overlay-input {
+            margin-bottom: 20px;
+        }
+        #image-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #image-preview {
+            max-width: 100%;
+            height: auto;
+            cursor: crosshair;
+        }
+        .color-picker {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .color-box {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        .color-box.selected {
+            border-color: #000;
+        }
+        .color-code-input {
+            margin-top: 10px;
+            width: 150px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .blend-settings {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .blend-settings label {
+            margin-bottom: 5px;
+        }
+        .blend-settings select, .blend-settings input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="image-container">
+            <input type="file" id="overlay-input" accept="image/*"> <br> <input type="file" id="file-input" accept="image/*"> 
+            <canvas id="image-preview"></canvas>
+            <div class="color-picker" id="color-picker"></div>
+            <input type="text" id="color-code" class="color-code-input" placeholder="Enter color code...">
+ 
+            <div class="blend-settings">
+                <label for="blend-mode">Blend Mode:</label>
+                <select id="blend-mode">
+                    <option value="source-over">Normal</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="screen">Screen</option>
+                    <option value="overlay">Overlay</option>
+                    <option value="darken">Darken</option>
+                    <option value="lighten">Lighten</option>
+                    <option value="color-dodge">Color Dodge</option>
+                    <option value="color-burn">Color Burn</option>
+                    <option value="hard-light">Hard Light</option>
+                    <option value="soft-light">Soft Light</option>
+                    <option value="difference">Difference</option>
+                    <option value="exclusion">Exclusion</option>
+                    <option value="intersect">Intersect</option>
+                    <option value="color-intersect">Color Intersect</option>
+                </select>
+                <label for="transparency">Transparency:</label>
+                <input type="range" id="transparency" min="0" max="1" step="0.01" value="0.5">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let originalImage = null;
+        let overlayImage = null;
+        let ctx = null;
+        let primaryImageLoaded = false;
+        let overlayImageLoaded = false;
+
+   
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.getElementById('image-preview');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0);
+                        primaryImageLoaded = true;
+                        originalImage = img;
+                        if (overlayImageLoaded) {
+                            blendImages();
+                        }
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewOverlayImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        overlayImage = img;
+                        overlayImageLoaded = true;
+                        if (primaryImageLoaded) {
+                            blendImages();
+                        }
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function showColorPicker() {
+            const colorPicker = document.getElementById('color-picker');
+            colorPicker.innerHTML = '';
+            colors.forEach(color => {
+                const colorBox = document.createElement('div');
+                colorBox.classList.add('color-box');
+                colorBox.style.backgroundColor = color;
+                colorBox.addEventListener('click', () => selectColor(color));
+                colorPicker.appendChild(colorBox);
+            });
+        }
+
+        function selectColor(color) {
+            const rgbColor = hexToRgb(color);
+            applyColorFilter(rgbColor);
+        }
+
+        function applyColorFilter(color) {
+            const filteredData = ctx.createImageData(originalImage.width, originalImage.height);
+            const data = ctx.getImageData(0, 0, originalImage.width, originalImage.height).data;
+            const filtered = filteredData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                filtered[i] = color.r;
+                filtered[i + 1] = color.g;
+                filtered[i + 2] = color.b;
+                filtered[i + 3] = data[i + 3];
+            }
+
+            ctx.putImageData(filteredData, 0, 0);
+        }
+
+        function hexToRgb(hex) {
+            const bigint = parseInt(hex.substring(1), 16);
+            const r = (bigint >> 16) & 255;
+            const g = (bigint >> 8) & 255;
+            const b = (bigint & 255);
+            return { r, g, b };
+        }
+
+        function getColorFromCanvas(event) {
+            const x = event.offsetX;
+            const y = event.offsetY;
+            const pixel = ctx.getImageData(x, y, 1, 1).data;
+            const hexColor = rgbToHex(pixel[0], pixel[1], pixel[2]);
+            document.getElementById('color-code').value = hexColor;
+        }
+
+        function rgbToHex(r, g, b) {
+            return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+        }
+
+        function blendImages() {
+            if (primaryImageLoaded && overlayImageLoaded) {
+                const canvas = document.getElementById('image-preview');
+                const width = originalImage.width;
+                const height = originalImage.height;
+                canvas.width = width;
+                canvas.height = height;
+                ctx.clearRect(0, 0, width, height);
+                ctx.drawImage(originalImage, 0, 0);
+
+                const transparency = document.getElementById('transparency').value;
+                const blendMode = document.getElementById('blend-mode').value;
+
+                if (blendMode === 'intersect' || blendMode === 'color-intersect') {
+                    const primaryImageData = ctx.getImageData(0, 0, width, height);
+                    ctx.globalAlpha = transparency;
+                    ctx.drawImage(overlayImage, 0, 0, width, height);
+                    const overlayImageData = ctx.getImageData(0, 0, width, height);
+
+                    const resultData = ctx.createImageData(width, height);
+
+                    for (let i = 0; i < primaryImageData.data.length; i += 4) {
+                        const primaryAlpha = primaryImageData.data[i + 3] / 255;
+                        const overlayAlpha = overlayImageData.data[i + 3] / 255;
+
+                        if (blendMode === 'intersect') {
+                            const combinedAlpha = primaryAlpha * overlayAlpha;
+                            resultData.data[i] = overlayImageData.data[i];
+                            resultData.data[i + 1] = overlayImageData.data[i + 1];
+                            resultData.data[i + 2] = overlayImageData.data[i + 2];
+                            resultData.data[i + 3] = combinedAlpha * 255;
+                        } else if (blendMode === 'color-intersect') {
+                            if (primaryAlpha > 0 && overlayAlpha > 0) {
+                                resultData.data[i] = overlayImageData.data[i];
+                                resultData.data[i + 1] = overlayImageData.data[i + 1];
+                                resultData.data[i + 2] = overlayImageData.data[i + 2];
+                                resultData.data[i + 3] = 255;
+                            } else {
+                                resultData.data[i + 3] = 0;
+                            }
+                        }
+                    }
+                    ctx.putImageData(resultData, 0, 0);
+                } else {
+                    ctx.globalCompositeOperation = blendMode;
+                    ctx.globalAlpha = transparency;
+                    ctx.drawImage(overlayImage, 0, 0, width, height);
+                }
+
+                ctx.globalAlpha = 1.0;  // Reset alpha to default
+                ctx.globalCompositeOperation = 'source-over';  // Reset blend mode to default
+            }
+        }
+
+        document.getElementById('file-input').addEventListener('change', previewImage);
+        document.getElementById('overlay-input').addEventListener('change', previewOverlayImage);
+        document.getElementById('color-code').addEventListener('change', function() {
+            const colorCode = this.value.trim();
+            if (colorCode.match(/^#[0-9A-F]{6}$/i)) {
+                selectColor(colorCode.toLowerCase());
+            } else {
+                alert('Invalid color code. Please enter a valid hex color code (e.g., #RRGGBB)');
+            }
+        });
+        document.getElementById('image-preview').addEventListener('click', getColorFromCanvas);
+        document.getElementById('blend-mode').addEventListener('change', blendImages);
+        document.getElementById('transparency').addEventListener('input', blendImages);
+
+        showColorPicker();
+    </script>
+</body>
+</html>
