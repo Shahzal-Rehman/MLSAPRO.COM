@@ -93,11 +93,11 @@
 <body>
     <div class="container">
         <div id="image-container">
-            <input type="file" id="overlay-input" accept="image/*"> <br> <input type="file" id="file-input" accept="image/*"> 
+            <input type="file" id="file-input" accept="image/*"><br>
+            <input type="file" id="overlay-input" accept="image/*">
             <canvas id="image-preview"></canvas>
             <div class="color-picker" id="color-picker"></div>
             <input type="text" id="color-code" class="color-code-input" placeholder="Enter color code...">
- 
             <div class="blend-settings">
                 <label for="blend-mode">Blend Mode:</label>
                 <select id="blend-mode">
@@ -113,7 +113,8 @@
                     <option value="soft-light">Soft Light</option>
                     <option value="difference">Difference</option>
                     <option value="exclusion">Exclusion</option>
-                    <option value="intersect">Intersect</option>
+                    <option value="intersect">Intersect (Primary over Secondary)</option>
+                    <option value="intersect-reverse">Intersect (Secondary over Primary)</option>
                     <option value="color-intersect">Color Intersect</option>
                 </select>
                 <label for="transparency">Transparency:</label>
@@ -129,7 +130,26 @@
         let primaryImageLoaded = false;
         let overlayImageLoaded = false;
 
-   
+        document.getElementById('file-input').addEventListener('change', previewImage);
+        document.getElementById('overlay-input').addEventListener('change', previewOverlayImage);
+        document.getElementById('color-code').addEventListener('change', function() {
+            const colorCode = this.value.trim();
+            if (colorCode.match(/^#[0-9A-F]{6}$/i)) {
+                selectColor(colorCode.toLowerCase());
+            } else {
+                alert('Invalid color code. Please enter a valid hex color code (e.g., #RRGGBB)');
+            }
+        });
+        document.getElementById('image-preview').addEventListener('click', getColorFromCanvas);
+        document.getElementById('blend-mode').addEventListener('change', blendImages);
+        document.getElementById('transparency').addEventListener('input', blendImages);
+
+        const colors = [
+            '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF',
+            '#800000', '#808000', '#008000', '#800080', '#008080', '#000080',
+            '#C0C0C0', '#808080', '#999999', '#333333', '#666666', '#000000'
+        ];
+
         function previewImage(event) {
             const file = event.target.files[0];
             if (file) {
@@ -238,10 +258,14 @@
                 const transparency = document.getElementById('transparency').value;
                 const blendMode = document.getElementById('blend-mode').value;
 
-                if (blendMode === 'intersect' || blendMode === 'color-intersect') {
+                if (blendMode === 'intersect' || blendMode === 'intersect-reverse' || blendMode === 'color-intersect') {
                     const primaryImageData = ctx.getImageData(0, 0, width, height);
                     ctx.globalAlpha = transparency;
-                    ctx.drawImage(overlayImage, 0, 0, width, height);
+                    if (blendMode === 'intersect-reverse') {
+                        ctx.drawImage(overlayImage, 0, 0, width, height);
+                    } else {
+                        ctx.drawImage(overlayImage, 0, 0, width, height);
+                    }
                     const overlayImageData = ctx.getImageData(0, 0, width, height);
 
                     const resultData = ctx.createImageData(width, height);
@@ -255,6 +279,12 @@
                             resultData.data[i] = overlayImageData.data[i];
                             resultData.data[i + 1] = overlayImageData.data[i + 1];
                             resultData.data[i + 2] = overlayImageData.data[i + 2];
+                            resultData.data[i + 3] = combinedAlpha * 255;
+                        } else if (blendMode === 'intersect-reverse') {
+                            const combinedAlpha = primaryAlpha * overlayAlpha;
+                            resultData.data[i] = primaryImageData.data[i];
+                            resultData.data[i + 1] = primaryImageData.data[i + 1];
+                            resultData.data[i + 2] = primaryImageData.data[i + 2];
                             resultData.data[i + 3] = combinedAlpha * 255;
                         } else if (blendMode === 'color-intersect') {
                             if (primaryAlpha > 0 && overlayAlpha > 0) {
@@ -278,20 +308,6 @@
                 ctx.globalCompositeOperation = 'source-over';  // Reset blend mode to default
             }
         }
-
-        document.getElementById('file-input').addEventListener('change', previewImage);
-        document.getElementById('overlay-input').addEventListener('change', previewOverlayImage);
-        document.getElementById('color-code').addEventListener('change', function() {
-            const colorCode = this.value.trim();
-            if (colorCode.match(/^#[0-9A-F]{6}$/i)) {
-                selectColor(colorCode.toLowerCase());
-            } else {
-                alert('Invalid color code. Please enter a valid hex color code (e.g., #RRGGBB)');
-            }
-        });
-        document.getElementById('image-preview').addEventListener('click', getColorFromCanvas);
-        document.getElementById('blend-mode').addEventListener('change', blendImages);
-        document.getElementById('transparency').addEventListener('input', blendImages);
 
         showColorPicker();
     </script>
