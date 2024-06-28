@@ -1,6 +1,5 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +19,9 @@
         }
 
         #mlsapro {
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: relative; /* Added to allow background positioning */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -60,10 +55,9 @@
         }
     </style>
 </head>
-
 <body>
     <form id="mlsapro">
-        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s">
             <br>
             <a href="#" onclick="login()" class="login-btn">Connect With MLSAPRO Microsoft Tenant Assigned Account & shahzalshare.txt along with sr.xml</a>
             <br><br><br><br>
@@ -75,17 +69,20 @@
 
     <script>
         function preloadImages() {
-            var images = ['https://mlsapro.com/img/shapes/wavy-shape.png', 'https://mlsapro.com/img/shapes/wavy-shape1.png'];
-            for (var i = 0; i < images.length; i++) {
+            var images = [
+                'https://mlsapro.com/img/shapes/wavy-shape.png',
+                'https://mlsapro.com/img/shapes/wavy-shape1.png'
+            ];
+            images.forEach(function(url) {
                 var img = new Image();
-                img.src = images[i];
-            }
+                img.src = url;
+            });
         }
         preloadImages();
 
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        var backgroundUrl = isMobile ? 'https://mlsapro.com/img/shapes/wavy-shape.png' : 'https://mlsapro.com/img/shapes/wavy-shape1.png';
-        document.getElementById('mlsapro').style.backgroundImage = 'url(' + backgroundUrl + ')';
+        var backgroundUrl = isMobile ? 'url(https://mlsapro.com/img/shapes/wavy-shape.png)' : 'url(https://mlsapro.com/img/shapes/wavy-shape1.png)';
+        document.getElementById('mlsapro').style.backgroundImage = backgroundUrl;
 
         function login() {
             var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
@@ -94,8 +91,6 @@
             var scope = "user.read";
             var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
             window.open(loginUrl, "_self");
-            window.open("https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc", "_blank", "noopener,noreferrer");
-            window.open("https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705", "_blank", "noopener,noreferrer");
         }
 
         function signOut() {
@@ -121,5 +116,4 @@
         }
     </script>
 </body>
-
 </html>
