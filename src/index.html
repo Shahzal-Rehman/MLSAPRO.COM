@@ -16,12 +16,14 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
         }
 
         #mlsapro {
-            position: relative; /* Added to allow background positioning */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
+            position: relative;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -55,7 +57,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-image: url('https://mlsapro.com/img/shapes/wavy-shape.png');">
     <form id="mlsapro">
         <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s">
             <br>
@@ -82,7 +84,7 @@
 
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         var backgroundUrl = isMobile ? 'url(https://mlsapro.com/img/shapes/wavy-shape.png)' : 'url(https://mlsapro.com/img/shapes/wavy-shape1.png)';
-        document.getElementById('mlsapro').style.backgroundImage = backgroundUrl;
+        document.body.style.backgroundImage = backgroundUrl;
 
         function login() {
             var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
@@ -90,7 +92,7 @@
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
             var scope = "user.read";
             var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
-            window.open(loginUrl, "_self");
+            window.open(loginUrl, "_blank", "noopener,noreferrer");
         }
 
         function signOut() {
