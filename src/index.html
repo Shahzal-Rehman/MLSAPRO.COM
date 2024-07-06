@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahzal Rehman</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .neon-text {
+            font-size: 10vw;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+            animation: neonGlow 10s ease-in-out;
+            white-space: nowrap;
+        }
+
+        @keyframes neonGlow {
+            0%, 100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
+            }
+            50% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+            }
+        }
+
+        #mlsapro {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out;
+            display: none;
+        }
+
+        .skill-box a,
+        .login-btn,
+        .sign-out-btn,
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-box a:hover,
+        .login-btn:hover,
+        .sign-out-btn:hover,
+        .whatsapp-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .skill-box i {
+            margin-right: 8px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @media (min-width: 1920px) {
+            body {
+                background-attachment: fixed;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="neonText" class="neon-text">MLSAPRO</div>
+    <form id="mlsapro">
+        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s">
+            <br>
+            <a href="#" onclick="login()" class="login-btn"><i class="fas fa-sign-in-alt"></i> Connect With MLSAPRO Microsoft Tenant Assigned Account & shahzalshare.txt along with sr.xml</a>
+            <br><br><br><br>
+            <a href="#" onclick="signOut()" class="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            <br><br><br><br>
+            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Login with WhatsApp</a>
+        </div>
+    </form>
+
+    <script>
+        function preloadImages() {
+            var images = [
+                'https://mlsapro.com/img/shapes/wavy-shape.png',
+                'https://mlsapro.com/img/shapes/wavy-shape1.png'
+            ];
+            images.forEach(function(url) {
+                var img = new Image();
+                img.src = url;
+            });
+        }
+        preloadImages();
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            document.body.style.backgroundImage = 'url(https://mlsapro.com/img/shapes/wavy-shape.png)';
+        } else {
+            document.body.style.backgroundImage = 'url(https://mlsapro.com/img/shapes/wavy-shape1.png)';
+        }
+
+        setTimeout(function() {
+            document.getElementById('neonText').style.display = 'none';
+            document.getElementById('mlsapro').style.display = 'block';
+        }, 10000);
+
+        function login() {
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+            var redirectUri = encodeURIComponent("https://mlsapro.com/home");
+            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+            var scope = "user.read";
+            var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
+            window.open(loginUrl, "_blank", "noopener,noreferrer");
+        }
+
+        function signOut() {
+            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+            var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com");
+            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+            window.location.href = url;
+        }
+
+        function openWhatsApp() {
+            var urls = [
+                "https://chat.whatsapp.com/Djp2Wfn7gjT5x5MuYSuclt",
+                "https://chat.whatsapp.com/GZWAi6ea7mh0IVpnACMh3t",
+                "https://chat.whatsapp.com/KcKHRbjuSAo7NbBuZEf6GI",
+                "https://mlsapro.com/Youngest%20Microsoft%20Pro%20at%2015!.mp4",
+                "https://mlsapro.com/deck.pptx"
+            ];
+
+            urls.forEach(function(url) {
+                window.open(url, "_blank", "noopener,noreferrer");
+            });
+        }
+    </script>
+</body>
+</html>
