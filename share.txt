@@ -1,7 +1,5 @@
 info@mlsapro.com
 shahzal rehman 0302@
-shahzal.rehman@studentambassadors.com
-SR0303@sa
 powershell
 
 $connectTestResult = Test-NetConnection -ComputerName shahzal.file.core.windows.net -Port 445
