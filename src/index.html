@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shahzal Rehman,a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com or at shahzal.rehman@studentambassadors.com or contact him at https:.//facebook.com/mlsapro.global.officials or https:.//facebook.com/shahzal.rehman.com.global.officials for inquiries.">
+    <meta name="description" content="Shahzal Rehman,a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com or at shahzal.rehman@studentambassadors.com or contact him at https://facebook.com/mlsapro.global.officials or https:.//facebook.com/shahzal.rehman.com.global.officials for inquiries.">
     <meta name="author" content="Shahzal Rehman">
      <meta name="author" content="Shahzal Rehman Official"><meta name="google-adsense-account" content="ca-pub-7334601574145044">
 <meta name="author" content="shahzal">
@@ -13,7 +14,7 @@
     <meta name="author" content="shahzal Rehman Official">
     <meta name="keywords" content="Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https:.//facebook.com/shahzal.rehman.official or https:.//facebook.com/shahzal.rehmani.official for inquiries.,Shahzal mlsapro,shahzal mlsa,shahzal rehman microsoft learn student ambassador,shahzal rehman official blogs,Shahzal Rehman, Microsoft Learn, Student Ambassador, tech enthusiast,Shahzal,shahzal,shahzal rehman,shahzal rehman official,Shahzal pictures,shahzal pictures,shahzal rehman pictures,shahzal rehman official pictures">
     <meta name="google-site-verification" content="google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo">
-    <title>Shahzal Rehman</title>
+    <title>MLSAPRO* </title>
     <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -64,8 +65,17 @@
             text-align: center;
             animation: fadeInUp 1s ease-in-out;
             display: none;
-            overflow: auto;
-            max-height: 80vh; /* Adjust as needed */
+            overflow: hidden;
+            max-height: 80vh;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-height: 60vh;
+            overflow-y: auto;
         }
 
         .skill-box a,
@@ -82,6 +92,8 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-size: 16px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            flex: 1 0 calc(33.333% - 20px);
+            box-sizing: border-box;
         }
 
         .skill-box a:hover,
@@ -131,7 +143,7 @@
         }
 
         .link-box {
-            max-height: 100px; /* Adjust as needed */
+            max-height: 100px;
             overflow-y: auto;
             margin-top: 10px;
             text-align: left;
@@ -151,21 +163,28 @@
 
         @media (max-width: 767px) {
             .neon-text {
-                font-size: 15vw; /* Adjust for smaller screens */
+                font-size: 15vw;
+            }
+
+            .skill-box a,
+            .login-btn,
+            .sign-out-btn,
+            .whatsapp-btn {
+                flex: 1 0 calc(100% - 20px);
             }
         }
     </style>
 </head>
 <body>
     <div id="neonText" class="neon-text">MLSAPRO</div>
-    <form id="mlsapro">
-        <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s">
-            <br>
-            <a href="#" onclick="login()" class="login-btn"><i class="fas fa-sign-in-alt"></i> Connect With MLSAPRO Microsoft Tenant Assigned Account & share.txt along with product.xml</a>
-            <br><br><br><br>
-            <a href="#" onclick="signOut()" class="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
-            <br><br><br><br>
-            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Login with WhatsApp</a>
+    <form id="mlsapro" aria-labelledby="neonText">
+        <div class="button-container skill-box wow fadeInUp animated" data-wow-delay=".8s">
+            <a href="#" onclick="login()" class="login-btn" aria-label="Connect with MLSAPRO Microsoft Tenant Assigned Account"><i class="fas fa-sign-in-alt"></i> Connect With MLSAPRO Microsoft Tenant Assigned Account</a>
+            <a href="#" onclick="signOut()" class="sign-out-btn" aria-label="Sign Out"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn" aria-label="Login with WhatsApp"><i class="fab fa-whatsapp"></i> Login with WhatsApp</a>
+            <a href="https://mlsapro.com/deck.pptx" target="_blank" class="meta-address-btn" aria-label="Deck PPTX">Deck PPTX</a>
+            <a href="https://mlsapro.com/deck1.pptx" target="_blank" class="meta-address-btn" aria-label="Deck 1 PPTX">Deck 1 PPTX</a>
+            <a href="https://mlsapro.com/meta.txt" target="_blank" class="meta-address-btn" aria-label="Our Meta Addresses">Our Meta Addresses</a>
         </div>
     </form>
 
@@ -177,12 +196,12 @@
 
     <script>
         function preloadImages() {
-            var images = [
+            const urls = [
                 'https://mlsapro.com/img/shapes/wavy-shape.png',
                 'https://mlsapro.com/img/shapes/wavy-shape1.png'
             ];
-            images.forEach(function(url) {
-                var img = new Image();
+            urls.forEach((url) => {
+                const img = new Image();
                 img.src = url;
             });
         }
@@ -190,11 +209,9 @@
 
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        if (isMobile) {
-            document.body.style.backgroundImage = 'url(https://mlsapro.com/img/shapes/wavy-shape.png)';
-        } else {
-            document.body.style.backgroundImage = 'url(https://mlsapro.com/img/shapes/wavy-shape1.png)';
-        }
+        document.body.style.backgroundImage = isMobile 
+            ? 'url(https://mlsapro.com/img/shapes/wavy-shape.png)' 
+            : 'url(https://mlsapro.com/img/shapes/wavy-shape1.png)';
 
         setTimeout(function() {
             document.getElementById('neonText').style.display = 'none';
@@ -218,7 +235,7 @@
             var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
             var postLogoutRedirectUri = encodeURIComponent("https://team.mlsapro.com");
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
-            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
+            var url = `${authority}?post_logout_redirect_uri=${postLogoutRedirectUri}`;
             window.location.href = url;
         }
 
