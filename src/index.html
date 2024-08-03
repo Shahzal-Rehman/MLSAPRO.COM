@@ -213,7 +213,7 @@
 
         function login() {
             var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
-            var redirectUri = encodeURIComponent("https://mlsapro.com/home");
+            var redirectUri = encodeURIComponent("https://my.mlsapro.com/home");
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
             var scope = "user.read";
             var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
