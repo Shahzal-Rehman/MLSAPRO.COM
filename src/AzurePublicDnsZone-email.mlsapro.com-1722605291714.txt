@@ -1,0 +1,58 @@
+; 	Exported zone file from Azure DNS
+; 	Zone name: email.mlsapro.com
+; 	Date and time (UTC): Fri, 02 Aug 2024 13:28:11 GMT
+
+$TTL 300
+$ORIGIN email.mlsapro.com
+
+; SOA Record
+@	 3600		IN	SOA	ns1-34.azure-dns.com.	azuredns-hostmaster.microsoft.com	(
+	 	 	1	 ;serial
+	 	 	3600	 ;refresh
+	 	 	300	 ;retry
+	 	 	2419200	 ;expire
+	 	 	300	 ;minimum ttl
+)
+
+; NS Records
+@	172800	IN	NS	ns1-34.azure-dns.com.
+@	172800	IN	NS	ns2-34.azure-dns.net.
+@	172800	IN	NS	ns3-34.azure-dns.org.
+@	172800	IN	NS	ns4-34.azure-dns.info.
+shahzal	3600	IN	NS	ns1-05.azure-dns.com.
+shahzal	3600	IN	NS	ns2-05.azure-dns.net.
+shahzal	3600	IN	NS	ns3-05.azure-dns.org.
+shahzal	3600	IN	NS	ns4-05.azure-dns.info.
+
+; MX Records
+
+; A Records
+
+; AAAA Records
+
+; CNAME Records
+selector1-azurecomm-prod-net._domainkey	12960000	IN	CNAME	selector1-azurecomm-prod-net._domainkey.azurecomm.net
+selector2-azurecomm-prod-net._domainkey	12960000	IN	CNAME	selector2-azurecomm-prod-net._domainkey.azurecomm.net
+
+; PTR Records
+
+; TXT Records
+@	311040000	IN	TXT	"ms-domain-verification=15f59bea-3a76-46e3-94af-e5bf510fbf94"
+@	311040000	IN	TXT	"v=spf1 include:spf.protection.outlook.com -all"
+email.mlsapro.com	12960000	IN	TXT	"v=spf1 include:spf.protection.outlook.com -all"
+email.mlsapro.com	12960000	IN	TXT	"ms-domain-verification=5a502f80-3608-434e-ba85-bbb241da3bfd"
+
+; SRV Records
+
+; SPF Records
+
+; CAA Records
+
+; DS Records
+
+; TLSA Records
+
+; Azure Alias Records
+
+; Azure TmLink Records
+

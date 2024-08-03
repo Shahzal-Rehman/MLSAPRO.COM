@@ -1,0 +1,56 @@
+; 	Exported zone file from Azure DNS
+; 	Zone name: mlsapro.com
+; 	Date and time (UTC): Sat, 03 Aug 2024 11:33:45 GMT
+
+$TTL 300
+$ORIGIN mlsapro.com
+
+; SOA Record
+@	 3600		IN	SOA	ns1-07.azure-dns.com.	azuredns-hostmaster.microsoft.com	(
+	 	 	1	 ;serial
+	 	 	3600	 ;refresh
+	 	 	300	 ;retry
+	 	 	2419200	 ;expire
+	 	 	300	 ;minimum ttl
+)
+
+; NS Records
+@	172800	IN	NS	ns1-07.azure-dns.com.
+@	172800	IN	NS	ns2-07.azure-dns.net.
+@	172800	IN	NS	ns3-07.azure-dns.org.
+@	172800	IN	NS	ns4-07.azure-dns.info.
+
+; MX Records
+
+; A Records
+
+; AAAA Records
+
+; CNAME Records
+my	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+new	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+shahzal	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+shahzalrehman	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+team	3600	IN	CNAME	purple-forest-04012f110.4.azurestaticapps.net
+we	3600	IN	CNAME	purple-forest-04012f110.4.azurestaticapps.net
+
+; PTR Records
+
+; TXT Records
+@	3600	IN	TXT	"_iftjwk0f58senm6ji90k3mert2ep3s5"
+
+; SRV Records
+
+; SPF Records
+
+; CAA Records
+
+; DS Records
+
+; TLSA Records
+
+; Azure Alias Records
+pgc	3600	AZURE ALIAS 	CNAME	/subscriptions/f2668df2-1b2a-476b-84f4-1e12cc0d990d/resourceGroups/SATechnicalOnboarding/providers/Microsoft.Web/staticSites/mlsaproidcards
+
+; Azure TmLink Records
+

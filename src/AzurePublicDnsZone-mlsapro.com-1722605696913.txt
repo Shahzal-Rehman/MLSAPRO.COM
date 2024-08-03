@@ -1,0 +1,48 @@
+; 	Exported zone file from Azure DNS
+; 	Zone name: mlsapro.com
+; 	Date and time (UTC): Fri, 02 Aug 2024 13:34:39 GMT
+
+$TTL 300
+$ORIGIN mlsapro.com
+
+; SOA Record
+@	 3600		IN	SOA	ns1-07.azure-dns.com.	azuredns-hostmaster.microsoft.com	(
+	 	 	1	 ;serial
+	 	 	3600	 ;refresh
+	 	 	300	 ;retry
+	 	 	2419200	 ;expire
+	 	 	300	 ;minimum ttl
+)
+
+; NS Records
+@	172800	IN	NS	ns1-07.azure-dns.com.
+@	172800	IN	NS	ns2-07.azure-dns.net.
+@	172800	IN	NS	ns3-07.azure-dns.org.
+@	172800	IN	NS	ns4-07.azure-dns.info.
+
+; MX Records
+
+; A Records
+
+; AAAA Records
+
+; CNAME Records
+
+; PTR Records
+
+; TXT Records
+
+; SRV Records
+
+; SPF Records
+
+; CAA Records
+
+; DS Records
+
+; TLSA Records
+
+; Azure Alias Records
+
+; Azure TmLink Records
+

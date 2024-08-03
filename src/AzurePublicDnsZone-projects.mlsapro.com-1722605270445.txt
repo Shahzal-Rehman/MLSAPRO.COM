@@ -1,0 +1,49 @@
+; 	Exported zone file from Azure DNS
+; 	Zone name: projects.mlsapro.com
+; 	Date and time (UTC): Fri, 02 Aug 2024 13:27:50 GMT
+
+$TTL 300
+$ORIGIN projects.mlsapro.com
+
+; SOA Record
+@	 3600		IN	SOA	ns1-35.azure-dns.com.	azuredns-hostmaster.microsoft.com	(
+	 	 	1	 ;serial
+	 	 	3600	 ;refresh
+	 	 	300	 ;retry
+	 	 	2419200	 ;expire
+	 	 	300	 ;minimum ttl
+)
+
+; NS Records
+@	172800	IN	NS	ns1-35.azure-dns.com.
+@	172800	IN	NS	ns2-35.azure-dns.net.
+@	172800	IN	NS	ns3-35.azure-dns.org.
+@	172800	IN	NS	ns4-35.azure-dns.info.
+
+; MX Records
+
+; A Records
+
+; AAAA Records
+
+; CNAME Records
+www	3600	IN	CNAME	ghs.googlehosted.com.
+
+; PTR Records
+
+; TXT Records
+
+; SRV Records
+
+; SPF Records
+
+; CAA Records
+
+; DS Records
+
+; TLSA Records
+
+; Azure Alias Records
+
+; Azure TmLink Records
+

@@ -1,0 +1,82 @@
+; 	Exported zone file from Azure DNS
+; 	Zone name: mlsapro.com
+; 	Date and time (UTC): Fri, 02 Aug 2024 13:26:52 GMT
+
+$TTL 300
+$ORIGIN mlsapro.com
+
+; SOA Record
+@	 3600		IN	SOA	ns1-36.azure-dns.com.	azuredns-hostmaster.microsoft.com	(
+	 	 	1	 ;serial
+	 	 	3600	 ;refresh
+	 	 	300	 ;retry
+	 	 	2419200	 ;expire
+	 	 	300	 ;minimum ttl
+)
+
+; NS Records
+@	172800	IN	NS	ns1-36.azure-dns.com.
+@	172800	IN	NS	ns2-36.azure-dns.net.
+@	172800	IN	NS	ns3-36.azure-dns.org.
+@	172800	IN	NS	ns4-36.azure-dns.info.
+@	172800	IN	NS	SMTP.GOOGLE.COM
+email	3600	IN	NS	ns1-34.azure-dns.com.
+email	3600	IN	NS	ns2-34.azure-dns.net.
+email	3600	IN	NS	ns3-34.azure-dns.org.
+email	3600	IN	NS	ns4-34.azure-dns.info.
+mail	3600	IN	NS	ns1-34.azure-dns.com.
+mail	3600	IN	NS	ns2-34.azure-dns.net.
+mail	3600	IN	NS	ns3-34.azure-dns.org.
+mail	3600	IN	NS	ns4-34.azure-dns.info.
+shahzal.rehman	3600	IN	NS	ns1-09.azure-dns.com.
+shahzal.rehman	3600	IN	NS	ns2-09.azure-dns.net.
+shahzal.rehman	3600	IN	NS	ns3-09.azure-dns.org.
+shahzal.rehman	3600	IN	NS	ns4-09.azure-dns.info.
+
+; MX Records
+
+; A Records
+
+; AAAA Records
+
+; CNAME Records
+intro	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+new	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+new1	3600	IN	CNAME	ghs.googlehosted.com.
+recycling	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+shahzal	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+shahzalrehman	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+snake	3600	IN	CNAME	salmon-mushroom-09bb84b10.4.azurestaticapps.net
+team	3600	IN	CNAME	purple-forest-04012f110.4.azurestaticapps.net
+technicalonboarding	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+www	3600	IN	CNAME	polite-rock-0e3b3af10.5.azurestaticapps.net
+yeddula	3600	IN	CNAME	brave-plant-0df5a7c1e.5.azurestaticapps.net
+
+; PTR Records
+
+; TXT Records
+@	311040000	IN	TXT	"_s1m3bxvsthb932iiqy4hcjnyinxp4vi"
+@	311040000	IN	TXT	"google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo"
+@	311040000	IN	TXT	"MS964216"
+a	3600	IN	TXT	"_s1m3bxvsthb932iiqy4hcjnyinxp4vi"
+gzdf	3600	IN	TXT	"google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo"
+gzdf	3600	IN	TXT	"md1glkzcy4m52tkmxl1x49xjw24v92q3"
+mlsapro.com	311040000	IN	TXT	"ms-domain-verification=82c8e0d7-6af8-4456-aa76-734508517f91"
+mlsapro.com	311040000	IN	TXT	"ms-domain-verification=0c1d9bd2-a301-445a-9260-7ab8d5dbd7f7"
+webapp	3600	IN	TXT	"polite-rock-0e3b3af10.5.azurestaticapps.net"
+
+; SRV Records
+
+; SPF Records
+
+; CAA Records
+
+; DS Records
+
+; TLSA Records
+
+; Azure Alias Records
+cname	3600	AZURE ALIAS 	CNAME	/subscriptions/f2668df2-1b2a-476b-84f4-1e12cc0d990d/resourceGroups/SATechnicalOnboarding/providers/Microsoft.Web/staticSites/mlsa
+
+; Azure TmLink Records
+
