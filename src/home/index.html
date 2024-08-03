@@ -102,7 +102,7 @@ body {
     // Check if access token is present in local storage or in URL query params
     if (!accessToken && !code) {
       // Redirect the user to the Microsoft Azure AD login page
-      window.location.href = 'https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://mlsapro.com/home&scope=user.read';
+      window.location.href = 'https://login.microsoftonline.com/5db603e4-5a09-41bf-a36d-618c9e6bf0d0/oauth2/v2.0/authorize?client_id=9ec16646-a913-4fdb-8249-08fb1d98b99d&response_type=code&redirect_uri=https://my.mlsapro.com/home&scope=user.read';
     } else if (code) {
       // Handle the authentication callback and obtain the access token
       // For example, send a request to your server to exchange the code for an access token
