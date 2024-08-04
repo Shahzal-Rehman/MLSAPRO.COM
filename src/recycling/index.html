@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Game</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .game-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        .bin {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            border: 2px solid #333;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .item {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #333;
+            background-color: #ccc;
+            border-radius: 50%;
+            transition: top 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Recycling Game</h1>
+        <div class="bin" id="paper-bin" data-type="Paper">Paper</div>
+        <div class="bin" id="plastic-bin" data-type="Plastic">Plastic</div>
+        <div class="bin" id="glass-bin" data-type="Glass">Glass</div>
+        <div class="bin" id="metal-bin" data-type="Metal">Metal</div>
+        <div id="score">Score: 0</div>
+        <div id="game-over" style="display: none;">Game Over!</div>
+    </div>
+
+    <script>
+        // JavaScript code
+        let score = 0;
+        let gameRunning = true;
+
+        function createNewItem() {
+            const recyclableItems = ["Paper", "Plastic", "Glass", "Metal"];
+            const randomItemType = recyclableItems[Math.floor(Math.random() * recyclableItems.length)];
+            const newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.innerText = randomItemType;
+            newItem.style.left = `${Math.random() * (document.body.clientWidth - 50)}px`;
+            document.body.appendChild(newItem);
+            newItem.addEventListener('click', function() {
+                const binType = this.getAttribute('data-type');
+                const itemType = this.innerText;
+                if (binType === itemType && gameRunning) {
+                    score += 10;
+                    document.getElementById('score').innerText = `Score: ${score}`;
+                    this.remove();
+                }
+            });
+            setTimeout(() => {
+                if (gameRunning) {
+                    newItem.remove();
+                }
+            }, 5000); // Adjust time duration for items to disappear
+        }
+
+        function endGame() {
+            gameRunning = false;
+            document.getElementById('game-over').style.display = 'block';
+        }
+
+        // Start the game
+        setInterval(createNewItem, 6000); // Adjust interval for spawning items
+        setTimeout(endGame, 30000); // Adjust game duration
+    </script>
+</body>
+</html>
