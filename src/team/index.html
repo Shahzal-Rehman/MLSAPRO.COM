@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Profiles</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Added to prevent horizontal scroll */
+            /* Background */
+            background: url('https://mlsapro.com/img/shapes/wavy-shape.png') no-repeat center center/cover;
+            /* If you want different backgrounds for Android and other devices, you can use media queries */
+        }
+
+        /* Sections */
+        .section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 300px; /* Limiting the maximum width of profile cards */
+            margin: auto; /* Centering the profile cards */
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .profile-card .content {
+            padding: 20px;
+        }
+
+        .profile-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .profile-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        @media screen and (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(3, minmax(300px, 1fr)); /* Three columns for larger screens */
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(6, minmax(300px, 1fr)); /* Maximum of six columns for very large screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Add pagination buttons -->
+    <button onclick="showPage(1)">Page 1</button>
+    <button onclick="showPage(2)">Page 2</button>
+    <!-- Add profile cards here -->
+    <div id="page1" class="page active-page">
+        <!-- Founder Section -->
+        <section id="founders" class="section">
+            <h1 class="section-title">Founders</h1>
+            <div class="grid-container">
+                <!-- Founder profiles -->
+                <!-- Founder 1 -->
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Founder 1">
+                    <div class="content">
+                        <h2>Shahzal Rehman</h2>
+                        <p>Designation: Masters In designing, MLSA Youngest title Holder</p>
+                    </div>
+                </div>
+                <!-- Founder 2 -->
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Founder 2">
+                    <div class="content">
+                        <h2>Kinza Kanwal</h2>
+                        <p>Designation: Winner And Qualifier of regional MS Imagine Cup</p>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Founder 2">
+                    <div class="content">
+                        <h2>Anza</h2>
+                        <p>Designation:@GDSC-Lead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Section -->
+        <section id="leads" class="section">
+            <h1 class="section-title">Leads</h1>
+            <div class="grid-container">
+                <!-- Lead profiles -->
+                <!-- Lead 1 -->
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Lead 1">
+                    <div class="content">
+                        <h2>Yuhaan</h2>
+                        <p>Designation: GDSC Lead</p>
+                    </div>
+                </div>
+                <!-- Lead 2 -->
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Lead 2">
+                    <div class="content">
+                        <h2>Nehaal</h2>
+                        <p>Designation: AWS-Certified</p>
+                    </div>
+                </div>
+                <!-- Add more lead profiles if needed -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Page 2 -->
+    <div id="page2" class="page">
+        <!-- Faculty Section -->
+        <section id="faculty" class="section">
+            <h1 class="section-title">Faculty Members</h1>
+            <div class="grid-container">
+                <!-- Faculty profiles -->
+                <!-- Faculty Member 1 -->
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Faculty Member 1">
+                    <div class="content">
+                        <h2>Hashim</h2>
+                        <p>Designation: Art & Craft with Deep Tech</p>
+                    </div>
+                </div>
+                <!-- Faculty Member 2 -->
+                <div class="profile-card">
+                    <img src="founder1.jpg" alt="Faculty Member 2">
+                    <div class="content">
+                        <h2>Zubair</h2>
+                        <p>Designation: Mechanical Engineer</p>
+                    </div>
+                </div>
+                <!-- Add more faculty profiles if needed -->
+            </div>
+        </section>
+
+        <!-- Ambassadors Section -->
+        <section id="ambassadors" class="section">
+            <h1 class="section-title">Ambassadors</h1>
+            <div class="grid-container">
+                <!-- Ambassador profiles -->
+                <!-- Add ambassador profiles here -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Function to show page
+        function showPage(pageNumber) {
+            // Hide all pages
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function (page) {
+                page.classList.remove('active-page');
+            });
+
+            // Show the selected page
+            var selectedPage = document.getElementById('page' + pageNumber);
+            selectedPage.classList.add('active-page');
+        }
+    </script>
+</body>
+
+</html>

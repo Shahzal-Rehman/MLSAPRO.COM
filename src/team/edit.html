@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profiles</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Edit Profiles</h1>
+    <form id="edit-form">
+        <label for="profile-select">Select Profile:</label>
+        <select id="profile-select">
+            <option value="new-profile">New Profile</option>
+            <option value="new-profile">New Profile</option> <!-- Option for creating a new profile -->
+        </select><br>
+        <div id="new-profile-fields" style="display: none;">
+            <label for="new-name">Name:</label>
+            <input type="text" id="new-name"><br>
+            <label for="new-designation">Designation:</label>
+            <input type="text" id="new-designation"><br>
+            <label for="new-description">Description:</label><br>
+            <textarea id="new-description" rows="4" cols="50"></textarea><br>
+            <label for="new-image">Image:</label>
+            <input type="file" id="new-image"><br>
+        </div>
+        <button type="button" onclick="saveChanges()">Save Changes</button>
+    </form>
+
+    <script>
+        function saveChanges() {
+            var profileId = $('#profile-select').val();
+            var name, designation, description;
+            
+            if (profileId === 'new-profile') {
+                // If creating a new profile, get values from the new profile fields
+                name = $('#new-name').val();
+                designation = $('#new-designation').val();
+                description = $('#new-description').val();
+
+                // Get profile picture file
+                var fileInput = document.getElementById('new-image');
+                var file = fileInput.files[0];
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    var profilePicture = e.target.result;
+
+                    // Send data to Azure SQL Database
+                    $.ajax({
+                        url: 'save_profile.php', // Replace with your server-side script URL
+                        method: 'POST',
+                        data: {
+                            name: name,
+                            designation: designation,
+                            description: description,
+                            profile_picture: profilePicture
+                        },
+                        success: function(response) {
+                            alert('New profile created successfully!');
+                            $('#new-profile-fields').hide(); // Hide the new profile fields after creating the profile
+                        },
+                        error: function(xhr, status, error) {
+                            alert('Error creating profile: ' + error);
+                        }
+                    });
+                };
+
+                if (file) {
+                    reader.readAsDataURL(file); // Read file as data URL
+                } else {
+                    alert('Please select a profile picture.');
+                }
+            } else {
+                // Update existing profile (not implemented in this example)
+                alert('Updating existing profile is not implemented in this example.');
+            }
+            // Clear form fields
+            $('#edit-form')[0].reset();
+        }
+
+        // Show new profile fields when "New Profile" is selected
+        $('#profile-select').change(function () {
+            if ($(this).val() === 'new-profile') {
+                $('#new-profile-fields').show();
+            } else {
+                $('#new-profile-fields').hide();
+            }
+        });
+    </script>
+</body>
+
+</html>
