@@ -1,16 +1,23 @@
-﻿Instagram username = mlsapro.global.officials name = MLSAPRO
+﻿Instagram username = mlsapro.insta - name = MLSAPRO
 
-main shahzal0302@outlook.com facebook = Abdul Rashid (Shahzal Rehman Global Official) username = shahzal.rehman.global.official
+main shahzal0302@outlook.com facebook = Abdul Rashid (Shahzal Rehman Global Official) username = shahzal.rehman.facebook.official
 
-Shahzal Rehman Official-Microsoft Official Professional Title Holder. not to be change username = shahzal.rehman.com.global.officials
-Shahzal Rehman Official-Microsoft Official Professional Title Holder to be changed username =mlsapro.global.officials
+Shahzal Rehman Official-Microsoft Official Title Holder. not to be change username = shahzal.rehman.facebook
+MLSAPRO to be changed username = mlsapro.facebook
 additional account usernaem +shahzal.rehman.global.officia and name is MLSA PRO it is to be changed
 
 shahzalrehman@outlook.com
-https://www.facebook.com/shahzal.rehman.seventeen.years.of.age.official
-
+https://www.facebook.com/shahzal.rehman.facebook.seventeen
 
 
 shahzalrehman0302@gmail.com
-https://www.facebook.com/shahzal.rehman.seven.years.of.age.official
+https://www.facebook.com/shahzal.rehman.facebook.seven
 name Shahzal Rehman  (Seven Years Official)
+
+
+shahzal.rehman.facebook.seventeen
+mlsapro.insta
+shahzal.rehman.facebook.seven
+main- shahzal.rehman.facebook.official
+additional org-  shahzal.rehman.facebook
+additional org- mlsapro.facebook
