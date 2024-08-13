@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta charset="UTF-8">
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shahzal Rehman,a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com or at shahzal.rehman@studentambassadors.com or contact him at https://facebook.com/mlsapro.global.officials or https://facebook.com/shahzal.rehman.com.global.officials for inquiries.https://my.mlsapro.com/srmapofmain.txt">
+    <meta name="description" content="Shahzal Rehman, a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com or at shahzal.rehman@studentambassadors.com.">
     <meta name="author" content="Shahzal Rehman">
-     <meta name="author" content="Shahzal Rehman Official"><meta name="google-adsense-account" content="ca-pub-7334601574145044">
-<meta name="author" content="shahzal">
-<meta name="author" content="shahzal rehman">
-    <meta name="author" content="shahzal Rehman Official">
-    <meta name="keywords" content="Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https://facebook.com/shahzal.rehman.official or https://facebook.com/shahzal.rehmani.official for inquiries.,Shahzal mlsapro,mlsapro.com,mlsapro is now at https://my.mlsapro.com,shahzal mlsa,shahzal rehman microsoft learn student ambassador,shahzal rehman official blogs,Shahzal Rehman, Microsoft Learn, Student Ambassador, tech enthusiast,Shahzal,shahzal,shahzal rehman,shahzal rehman official,Shahzal pictures,shahzal pictures,shahzal rehman pictures,shahzal rehman official pictures">
-    <meta name="google-site-verification" content="google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo">
-    <title>MLSAPRO* </title>
-    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png"/>
+    <meta name="keywords" content="Shahzal Rehman, Microsoft Learn Student Ambassador, tech enthusiast, Shahzal Rehman Official">
+    <meta name="google-site-verification" content="Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo">
+    <title>MLSAPRO</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon/icon128.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-        /* Main Gradient Color */
-        /* background: rgb(192,192,192);
-           background: linear-gradient(90deg, rgb(192,192,192) 5%, rgba(231,0,255,1) 50%, rgba(255,0,254,1) 95%);
-        */
-
-        /* Button Hover Color Change (Inverse) */
-        /* background: rgb(192,192,192);
-           background: linear-gradient(-90deg, rgba(192,192,192) 0%, rgba(231,0,255,1) 51%, rgba(255,0,254,1) 100%);
-        */
-
+        /* Main Gradient Background */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(90deg, rgb(255, 192, 192) 5%, rgba(231, 255, 255, 1) 50%, rgba(192, 192, 192, 255) 95%);
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -46,41 +29,46 @@
             background-position: center;
         }
 
+        /* Neon Text Animation */
         .neon-text {
-            font-size: 10vw;
+            font-size: 15vw;
             color: #fff;
             text-align: center;
-            letter-spacing: 2px;
+            letter-spacing: 10px;
             text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
             animation: neonGlow 10s ease-in-out infinite;
             white-space: nowrap;
         }
 
         @keyframes neonGlow {
-            0%, 100% {
+            0%,
+            100% {
                 text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff;
             }
+
             50% {
                 text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
             }
         }
 
+        /* Skill Box Container */
         #mlsapro {
             position: relative;
             width: 80%;
-            max-width: 600px;
+            max-width: 1000px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            border-radius: 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             text-align: center;
             animation: fadeInUp 1s ease-in-out;
             display: none;
             overflow: auto;
-            max-height: 25vh; /* Adjust as needed */
+            max-height: 25vh;
         }
 
+        /* Skill Buttons */
         .skill-box a,
         .login-btn,
         .sign-out-btn,
@@ -88,43 +76,65 @@
             display: inline-block;
             padding: 15px 30px;
             margin: 10px;
-            background-color: #007bff;
-            color: #fff;
+            background: linear-gradient(to right, rgba(0, 123, 255, 0) 50%, rgba(0, 123, 255, 0) 50%);
+            color: #00f;
             text-decoration: none;
             border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background 0.3s ease, transform 0.3s ease;
             font-size: 16px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
         .skill-box a:hover,
         .login-btn:hover,
         .sign-out-btn:hover,
         .whatsapp-btn:hover {
-            background-color: #0056b3;
+            background: linear-gradient(to right, rgba(0, 123, 255, 0) 50%, rgba(0, 123, 255, 0) 50%);
             transform: scale(1.05);
         }
 
-        .skill-box i {
-            margin-right: 8px;
+        .skill-box a::before,
+        .login-btn::before,
+        .sign-out-btn::before,
+        .whatsapp-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 123, 255, 0);
+            transition: left 0.3s ease;
         }
 
+        .skill-box a:hover::before,
+        .login-btn:hover::before,
+        .sign-out-btn:hover::before,
+        .whatsapp-btn:hover::before {
+            left: 0;
+        }
+
+        /* Fade In Up Animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translate3d(0, 40px, 0);
             }
+
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
             }
         }
 
+        /* Powered by Section */
         .powered-by-container {
             position: fixed;
-            bottom: 20px;
+            bottom: 10px;
             width: 100%;
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
             color: #fff;
             font-size: 14px;
@@ -143,8 +153,9 @@
             margin-top: 5px;
         }
 
+        /* Link Box Scrollable Container */
         .link-box {
-            max-height: 100px; /* Adjust as needed */
+            max-height: 100px;
             overflow-y: auto;
             margin-top: 10px;
             text-align: left;
@@ -162,27 +173,69 @@
             color: #00f;
         }
 
-        @media (max-width: 767px) {
-            .neon-text {
-                font-size: 15vw; /* Adjust for smaller screens */
+        /* Background Neon Sparks Animation */
+        .neon-sparks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .neon-spark {
+            position: absolute;
+            background-color: rgba(255, 0, 254, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 0, 254, 0.8), 0 0 40px rgba(255, 0, 254, 0.8);
+            animation: sparkMove 5s linear infinite;
+        }
+
+        @keyframes sparkMove {
+            0% {
+                transform: translateY(0) scale(0.3);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
             }
         }
+
+        @media (max-width: 767px) {
+            .neon-text {
+                font-size: 15vw;
+            }
+        }
+ 
     </style>
 </head>
+
 <body>
-  
-<div id="neonText" class="neon-text">MLSAPRO</div>
+
+    </div>
+    <!-- Neon Sparks Background -->
+    <div class="neon-sparks" id="neonSparks"></div>
+
+    <!-- Neon Text -->
+    <div id="neonText" class="neon-text">MLSAPRO</div>
+    
+    <!-- Skill Box -->
     <form id="mlsapro">
         <div class="skill-box wow fadeInUp animated" data-wow-delay=".8s">
             <br>
- <br><a href="https://my.mlsapro.com" target="_blank" class="meta-address-btn" aria-label="Intro">WE With Wordpress</a>
-<br> 
+            <br><a href="https://my.mlsapro.com" target="_blank" class="meta-address-btn" aria-label="Intro">WE With Wordpress</a>
+            <br> 
             <a href="#" onclick="login()" class="login-btn"><i class="fas fa-sign-in-alt"></i> Connect With shahzalshare.txt along with sr.xml</a>
             <br>
             <a href="#" onclick="signOut()" class="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
             <br>
-            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Login with WhatsApp</a><br>
- <br><a href="https://my.mlsapro.com/Youngest Microsoft Pro at 15!.mp4" target="_blank" class="meta-address-btn" aria-label="Intro">Intro </a>
+            <a href="#" onclick="openWhatsApp()" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Login with WhatsApp</a>
+            <br>
+             <br><a href="https://my.mlsapro.com/Youngest Microsoft Pro at 15!.mp4" target="_blank" class="meta-address-btn" aria-label="Intro">Intro </a>
  <br>
  <br><a href="https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc?wt.mc_id=studentamb_281705" target="_blank" class="meta-address-btn" aria-label="MVP Porfolio">MVP Porfolio </a>
  <br>
@@ -215,48 +268,46 @@
 <a href="https://my.mlsapro.com/map.txt" target="_blank" class="meta-address-btn" aria-label="Map">MAP.txt </a>
 <br>
  <br><a href="https://my.mlsapro.com/pass.txt" target="_blank" class="meta-address-btn" aria-label="Intro">Accounts To sign in</a>
-<br>
-  </div>
+        </div>
     </form>
 
-    <!-- Powered by Shahzal Rehman Section -->
+    <!-- Powered by Section -->
     <div class="powered-by-container">
-        <div class="powered-by-text">Powered by</div>
-        <div class="shahzal-rehman-text">Shahzal Rehman <br> <a href="mailto:DoNotReply@mlsapro.com" target="_blank" class="meta-address-btn" aria-label="Map">You can hear us</a>
- </div>
-  </div>
+        <p class="powered-by-text">Powered by MLSAPRO.com</p>
+        <p class="shahzal-rehman-text">Shahzal Rehman</p>
+<p class="Powered-by-text">Donotreply@mlsapro.com</p>
+    </div>
 
-    <script>
-        function preloadImages() {
-            var images = [
-                'https://my.mlsapro.com/img/shapes/wavy-shape.png',
-                'https://my.mlsapro.com/img/shapes/wavy-shape1.png'
-            ];
-            images.forEach(function(url) {
-                var img = new Image();
-                img.src = url;
-            });
-        }
-        preloadImages();
+     <script>
 
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-        if (isMobile) {
-            document.body.style.backgroundImage = 'url(https://my.mlsapro.com/img/shapes/wavy-shape.png)';
-        } else {
-            document.body.style.backgroundImage = 'url(https://my.mlsapro.com/img/shapes/wavy-shape1.png)';
-        }
-
-        setTimeout(function() {
+        // JavaScript to control the display after 10 seconds
+        setTimeout(function () {
             document.getElementById('neonText').style.display = 'none';
-            var mlsapro = document.getElementById('mlsapro');
-            mlsapro.style.display = 'block';
-            if (mlsapro.scrollHeight > mlsapro.clientHeight) {
-                mlsapro.classList.add('scrollable');
-            }
+            document.getElementById('mlsapro').style.display = 'block';
         }, 10000);
 
-        function login() {
+    
+
+        // Creating random neon sparks
+        function createNeonSparks(numSparks) {
+            const neonSparksContainer = document.getElementById('neonSparks');
+            for (let i = 0; i < numSparks; i++) {
+                const spark = document.createElement('div');
+                spark.classList.add('neon-spark');
+                spark.style.width = `${Math.random() * 10 + 5}px`;
+                spark.style.height = `${Math.random() * 10 + 5}px`;
+                spark.style.left = `${Math.random() * 100}%`;
+                spark.style.top = `${Math.random() * 100}%`;
+                spark.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                neonSparksContainer.appendChild(spark);
+            }
+        }
+
+        // Call the function to create neon sparks
+        createNeonSparks(70);
+
+function login() {
             var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
             var redirectUri = encodeURIComponent("https://my.mlsapro.com/home");
             var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
@@ -287,4 +338,5 @@
         }
     </script>
 </body>
+
 </html>
