@@ -1,19 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shahzal Rehman,a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https:.//facebook.com/shahzal.rehman.official or https:.//facebook.com/shahzal.rehmani.official for inquiries.">
+    <meta name="description" content="Shahzal Rehman, a Microsoft Learn Student Ambassador. Contact Shahzal at shahzalrehman0302@gmail.com.">
     <meta name="author" content="Shahzal Rehman">
-     <meta name="author" content="Shahzal Rehman Official"><meta name="google-adsense-account" content="ca-pub-7334601574145044">
-<meta name="author" content="shahzal">
-<meta name="author" content="shahzal rehman">
-    <meta name="author" content="shahzal Rehman Official">
-    <meta name="keywords" content="Contact Shahzal at shahzalrehman0302@gmail.com or contact him at https:.//facebook.com/shahzal.rehman.official or https:.//facebook.com/shahzal.rehmani.official for inquiries.,Shahzal mlsapro,shahzal mlsa,shahzal rehman microsoft learn student ambassador,shahzal rehman official blogs,Shahzal Rehman, Microsoft Learn, Student Ambassador, tech enthusiast,Shahzal,shahzal,shahzal rehman,shahzal rehman official,Shahzal pictures,shahzal pictures,shahzal rehman pictures,shahzal rehman official pictures">
-    <meta name="google-site-verification" content="google-site-verification=Zh2kBBPJG7GZezC82-kdDvFdwV0mOOdgQsFUG8HYpYo">
+    <meta name="keywords" content="Shahzal Rehman, Microsoft Learn Student Ambassador, tech enthusiast, image effects, sketch converter, sepia, saturation, edge detection">
     <title>Image Effects App</title>
     <style>
         body {
@@ -55,6 +47,14 @@
             margin-top: 20px;
             max-width: 100%;
         }
+        #threshold-container {
+            display: none;
+            margin-top: 10px;
+        }
+        #saturation-container {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -66,12 +66,38 @@
         </div>
         <div class="input-container">
             <label for="effect-type">Select Effect:</label>
-            <select id="effect-type">
+            <select id="effect-type" onchange="toggleSliders()">
                 <option value="grayscale">Grayscale</option>
                 <option value="invert">Invert Colors</option>
+                <option value="sepia">Sepia</option>
+                <option value="saturation">Saturation</option>
+                <option value="darkred">Dark Red Saturation</option>
                 <option value="edge">Edge Detection</option>
-                <!-- Add more options as needed -->
+                <option value="brightness">Brightness</option>
+                <option value="contrast">Contrast</option>
+                <option value="blur">Blur</option>
+                <option value="sharpen">Sharpen</option>
+                <option value="emboss">Emboss</option>
+                <option value="vintage">Vintage</option>
+                <option value="technicolor">Technicolor</option>
+                <option value="polaroid">Polaroid</option>
+                <option value="kodachrome">Kodachrome</option>
+                <option value="nightvision">Night Vision</option>
+                <option value="hueRotate">Hue Rotate</option>
+                <option value="solarize">Solarize</option>
+                <option value="threshold">Threshold</option>
+                <option value="posterize">Posterize</option>
             </select>
+        </div>
+        <div id="threshold-container" class="input-container">
+            <label for="threshold">Threshold:</label>
+            <input type="range" id="threshold" min="1" max="100" value="30">
+            <span id="threshold-value">30</span>%
+        </div>
+        <div id="saturation-container" class="input-container">
+            <label for="saturation">Saturation:</label>
+            <input type="range" id="saturation" min="0" max="200" value="100">
+            <span id="saturation-value">100</span>%
         </div>
         <div class="button-container">
             <button onclick="applyEffect()">Apply Effect</button>
@@ -81,10 +107,36 @@
     <canvas id="image-canvas" class="image-preview" style="display: none;"></canvas>
 
     <script>
+        function toggleSliders() {
+            const effectType = document.getElementById('effect-type').value;
+            const thresholdContainer = document.getElementById('threshold-container');
+            const saturationContainer = document.getElementById('saturation-container');
+            if (effectType === 'threshold' || effectType === 'edge') {
+                thresholdContainer.style.display = 'block';
+                saturationContainer.style.display = 'none';
+            } else if (effectType === 'saturation') {
+                saturationContainer.style.display = 'block';
+                thresholdContainer.style.display = 'none';
+            } else {
+                thresholdContainer.style.display = 'none';
+                saturationContainer.style.display = 'none';
+            }
+        }
+
+        document.getElementById('threshold').addEventListener('input', function() {
+            document.getElementById('threshold-value').textContent = this.value;
+        });
+
+        document.getElementById('saturation').addEventListener('input', function() {
+            document.getElementById('saturation-value').textContent = this.value;
+        });
+
         function applyEffect() {
             const fileInput = document.getElementById('upload-file');
             const effectType = document.getElementById('effect-type').value;
             const file = fileInput.files[0];
+            const thresholdValue = document.getElementById('threshold').value;
+            const saturationValue = document.getElementById('saturation').value / 100;
 
             if (!file) {
                 alert('Please select an image file.');
@@ -109,12 +161,27 @@
                     const data = imageData.data;
 
                     // Apply selected effect
-                    if (effectType === 'grayscale') {
-                        applyGrayscale(data);
-                    } else if (effectType === 'invert') {
-                        applyInvert(data);
-                    } else if (effectType === 'edge') {
-                        applyEdgeDetection(data);
+                    switch(effectType) {
+                        case 'grayscale': applyGrayscale(data); break;
+                        case 'invert': applyInvert(data); break;
+                        case 'sepia': applySepia(data); break;
+                        case 'saturation': applySaturation(data, saturationValue); break;
+                        case 'darkred': applyDarkRedSaturation(data); break;
+                        case 'edge': applyEdgeDetection(data, thresholdValue); break;
+                        case 'brightness': applyBrightness(data, 40); break;
+                        case 'contrast': applyContrast(data, 30); break;
+                        case 'blur': applyBlur(ctx, canvas); break;
+                        case 'sharpen': applySharpen(ctx, canvas); break;
+                        case 'emboss': applyEmboss(ctx, canvas); break;
+                        case 'vintage': applyVintage(ctx, canvas); break;
+                        case 'technicolor': applyTechnicolor(ctx, canvas); break;
+                        case 'polaroid': applyPolaroid(ctx, canvas); break;
+                        case 'kodachrome': applyKodachrome(ctx, canvas); break;
+                        case 'nightvision': applyNightVision(data); break;
+                        case 'hueRotate': applyHueRotate(ctx, canvas, 90); break;
+                        case 'solarize': applySolarize(data); break;
+                        case 'threshold': applyThreshold(data, thresholdValue); break;
+                        case 'posterize': applyPosterize(data, 8); break;
                     }
 
                     // Display processed image
@@ -131,38 +198,262 @@
             reader.readAsDataURL(file);
         }
 
+        // Effect functions
         function applyGrayscale(data) {
             for (let i = 0; i < data.length; i += 4) {
                 const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
-                data[i] = avg;       // Red channel
-                data[i + 1] = avg;   // Green channel
-                data[i + 2] = avg;   // Blue channel
+                data[i] = avg;
+                data[i + 1] = avg;
+                data[i + 2] = avg;
             }
-            const canvas = document.getElementById('image-canvas');
-            canvas.getContext('2d').putImageData(new ImageData(data, canvas.width, canvas.height), 0, 0);
+            redrawCanvas(data);
         }
 
         function applyInvert(data) {
             for (let i = 0; i < data.length; i += 4) {
-                data[i] = 255 - data[i];     // Red channel
-                data[i + 1] = 255 - data[i + 1]; // Green channel
-                data[i + 2] = 255 - data[i + 2]; // Blue channel
+                data[i] = 255 - data[i];
+                data[i + 1] = 255 - data[i + 1];
+                data[i + 2] = 255 - data[i + 2];
             }
-            const canvas = document.getElementById('image-canvas');
-            canvas.getContext('2d').putImageData(new ImageData(data, canvas.width, canvas.height), 0, 0);
+            redrawCanvas(data);
         }
 
-        function applyEdgeDetection(data) {
-            const threshold = 30; // Adjust threshold for edge detection
+        function applySepia(data) {
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                data[i] = Math.min(255, (r * 0.393) + (g * 0.769) + (b * 0.189));
+                data[i + 1] = Math.min(255, (r * 0.349) + (g * 0.686) + (b * 0.168));
+                data[i + 2] = Math.min(255, (r * 0.272) + (g * 0.534) + (b * 0.131));
+            }
+            redrawCanvas(data);
+        }
+
+        function applySaturation(data, saturationValue) {
             for (let i = 0; i < data.length; i += 4) {
                 const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
-                const val = avg > threshold ? 255 : 0;
-                data[i] = val;       // Red channel
-                data[i + 1] = val;   // Green channel
-                data[i + 2] = val;   // Blue channel
+                data[i] = avg + (data[i] - avg) * saturationValue;
+                data[i + 1] = avg + (data[i + 1] - avg) * saturationValue;
+                data[i + 2] = avg + (data[i + 2] - avg) * saturationValue;
             }
+            redrawCanvas(data);
+        }
+
+        function applyDarkRedSaturation(data) {
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = Math.min(255, data[i] * 1.5); // Increase red channel
+                data[i + 1] = data[i + 1] * 0.5; // Decrease green channel
+                data[i + 2] = data[i + 2] * 0.5; // Decrease blue channel
+            }
+            redrawCanvas(data);
+        }
+
+        function applyEdgeDetection(data, thresholdValue) {
+            const width = canvas.width;
+            const height = canvas.height;
+            const edgeData = new Uint8ClampedArray(data.length);
+            for (let y = 1; y < height - 1; y++) {
+                for (let x = 1; x < width - 1; x++) {
+                    const index = (y * width + x) * 4;
+                    const gradientX = (
+                        -data[index - width * 4 - 4] - 2 * data[index - 4] - data[index + width * 4 - 4] +
+                        data[index - width * 4 + 4] + 2 * data[index + 4] + data[index + width * 4 + 4]
+                    );
+                    const gradientY = (
+                        -data[index - width * 4] - 2 * data[index - width] - data[index - width * 4 + 4] +
+                        data[index + width * 4] + 2 * data[index + width] + data[index + width * 4 + 4]
+                    );
+                    const edge = Math.sqrt(gradientX * gradientX + gradientY * gradientY);
+                    const color = edge > thresholdValue ? 255 : 0;
+                    edgeData[index] = color;
+                    edgeData[index + 1] = color;
+                    edgeData[index + 2] = color;
+                    edgeData[index + 3] = 255;
+                }
+            }
+            redrawCanvas(edgeData);
+        }
+
+        function applyBrightness(data, brightnessValue) {
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] += brightnessValue;
+                data[i + 1] += brightnessValue;
+                data[i + 2] += brightnessValue;
+                data[i] = Math.min(255, Math.max(0, data[i]));
+                data[i + 1] = Math.min(255, Math.max(0, data[i + 1]));
+                data[i + 2] = Math.min(255, Math.max(0, data[i + 2]));
+            }
+            redrawCanvas(data);
+        }
+
+        function applyContrast(data, contrastValue) {
+            const factor = (259 * (contrastValue + 255)) / (255 * (259 - contrastValue));
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = factor * (data[i] - 128) + 128;
+                data[i + 1] = factor * (data[i + 1] - 128) + 128;
+                data[i + 2] = factor * (data[i + 2] - 128) + 128;
+                data[i] = Math.min(255, Math.max(0, data[i]));
+                data[i + 1] = Math.min(255, Math.max(0, data[i + 1]));
+                data[i + 2] = Math.min(255, Math.max(0, data[i + 2]));
+            }
+            redrawCanvas(data);
+        }
+
+        function applyBlur(ctx, canvas) {
+            ctx.filter = 'blur(5px)';
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+        }
+
+        function applySharpen(ctx, canvas) {
+            const kernel = [
+                [0, -1, 0],
+                [-1, 5, -1],
+                [0, -1, 0]
+            ];
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            const width = canvas.width;
+            const height = canvas.height;
+            const result = new Uint8ClampedArray(data.length);
+
+            for (let y = 1; y < height - 1; y++) {
+                for (let x = 1; x < width - 1; x++) {
+                    let r = 0, g = 0, b = 0;
+                    for (let ky = -1; ky <= 1; ky++) {
+                        for (let kx = -1; kx <= 1; kx++) {
+                            const offsetX = (x + kx) * 4;
+                            const offsetY = (y + ky) * width * 4;
+                            const weight = kernel[ky + 1][kx + 1];
+                            r += data[offsetX + offsetY] * weight;
+                            g += data[offsetX + offsetY + 1] * weight;
+                            b += data[offsetX + offsetY + 2] * weight;
+                        }
+                    }
+                    const index = (y * width + x) * 4;
+                    result[index] = Math.min(255, Math.max(0, r));
+                    result[index + 1] = Math.min(255, Math.max(0, g));
+                    result[index + 2] = Math.min(255, Math.max(0, b));
+                    result[index + 3] = 255;
+                }
+            }
+            ctx.putImageData(new ImageData(result, width, height), 0, 0);
+        }
+
+        function applyEmboss(ctx, canvas) {
+            const kernel = [
+                [-2, -1, 0],
+                [-1, 1, 1],
+                [0, 1, 2]
+            ];
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            const width = canvas.width;
+            const height = canvas.height;
+            const result = new Uint8ClampedArray(data.length);
+
+            for (let y = 1; y < height - 1; y++) {
+                for (let x = 1; x < width - 1; x++) {
+                    let r = 0, g = 0, b = 0;
+                    for (let ky = -1; ky <= 1; ky++) {
+                        for (let kx = -1; kx <= 1; kx++) {
+                            const offsetX = (x + kx) * 4;
+                            const offsetY = (y + ky) * width * 4;
+                            const weight = kernel[ky + 1][kx + 1];
+                            r += data[offsetX + offsetY] * weight;
+                            g += data[offsetX + offsetY + 1] * weight;
+                            b += data[offsetX + offsetY + 2] * weight;
+                        }
+                    }
+                    const index = (y * width + x) * 4;
+                    result[index] = Math.min(255, Math.max(0, r + 128));
+                    result[index + 1] = Math.min(255, Math.max(0, g + 128));
+                    result[index + 2] = Math.min(255, Math.max(0, b + 128));
+                    result[index + 3] = 255;
+                }
+            }
+            ctx.putImageData(new ImageData(result, width, height), 0, 0);
+        }
+
+        function applyVintage(ctx, canvas) {
+            ctx.filter = 'sepia(0.5) contrast(1.2) saturate(1.5)';
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+        }
+
+        function applyTechnicolor(ctx, canvas) {
+            ctx.filter = 'sepia(1) saturate(2) hue-rotate(200deg)';
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+        }
+
+        function applyPolaroid(ctx, canvas) {
+            ctx.filter = 'sepia(1) brightness(1.2) contrast(1.2) saturate(1.5)';
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+        }
+
+        function applyKodachrome(ctx, canvas) {
+            ctx.filter = 'sepia(0.8) brightness(1.1) contrast(1.2) saturate(1.5)';
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+        }
+
+        function applyNightVision(data) {
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                data[i] = (r * 0.5) + (g * 0.7) + (b * 0.2);
+                data[i + 1] = (r * 0.2) + (g * 0.5) + (b * 0.3);
+                data[i + 2] = (r * 0.2) + (g * 0.3) + (b * 0.5);
+            }
+            redrawCanvas(data);
+        }
+
+        function applyHueRotate(ctx, canvas, angle) {
+            ctx.filter = `hue-rotate(${angle}deg)`;
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+        }
+
+        function applySolarize(data) {
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 255 - data[i];
+                data[i + 1] = 255 - data[i + 1];
+                data[i + 2] = 255 - data[i + 2];
+            }
+            redrawCanvas(data);
+        }
+
+        function applyThreshold(data, thresholdValue) {
+            for (let i = 0; i < data.length; i += 4) {
+                const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                const color = avg > thresholdValue ? 255 : 0;
+                data[i] = color;
+                data[i + 1] = color;
+                data[i + 2] = color;
+            }
+            redrawCanvas(data);
+        }
+
+        function applyPosterize(data, levels) {
+            const factor = (levels - 1) / 255;
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = Math.floor(data[i] * factor) * (255 / (levels - 1));
+                data[i + 1] = Math.floor(data[i + 1] * factor) * (255 / (levels - 1));
+                data[i + 2] = Math.floor(data[i + 2] * factor) * (255 / (levels - 1));
+            }
+            redrawCanvas(data);
+        }
+
+        function redrawCanvas(data) {
             const canvas = document.getElementById('image-canvas');
-            canvas.getContext('2d').putImageData(new ImageData(data, canvas.width, canvas.height), 0, 0);
+            const ctx = canvas.getContext('2d');
+            const imageData = ctx.createImageData(canvas.width, canvas.height);
+            imageData.data.set(data);
+            ctx.putImageData(imageData, 0, 0);
         }
     </script>
 </body>
