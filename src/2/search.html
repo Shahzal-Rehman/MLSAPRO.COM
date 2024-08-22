@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic File Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 60%;
+            max-width: 400px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic File Search</h1>
+        <input type="text" id="searchInput" placeholder="Search for files...">
+        <button onclick="searchFiles()">Search</button>
+    </header>
+    <main>
+        <ul id="results"></ul>
+    </main>
+    <script>
+        // Simulated file data
+        const files = [
+            'Ems 360__files/book1.xlsx',
+            'Ems 360__files/notes.pdf',
+            'MLSAPRO_files/report.docx',
+            'blogs/article.html',
+            'colour/sketch.html',
+            'contact/sketces.html',
+            'css/style.css',
+            'home/index.html',
+            'img/photo.jpg',
+            'js/app.js',
+            'my/index.html',
+            'pass/secret.txt',
+            'pgc/document.docx',
+            'recycling/index.html',
+            'resume/style.css',
+            'sign/up.txt',
+            'team/member.html'
+        ];
+
+        function searchFiles() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const results = document.getElementById('results');
+
+            // Clear previous results
+            results.innerHTML = '';
+
+            // Search through the files
+            const filteredFiles = files.filter(file => file.toLowerCase().includes(query));
+
+            // Display results
+            filteredFiles.forEach(file => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = 'https://mlsapro.com/' + file;  // Adjust base URL if needed
+                a.textContent = file;
+                li.appendChild(a);
+                results.appendChild(li);
+            });
+
+            if (filteredFiles.length === 0) {
+                results.innerHTML = '<li>No files found.</li>';
+            }
+        }
+    </script>
+</body>
+</html>
