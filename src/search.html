@@ -120,30 +120,31 @@
         'https://my.mlsapro.com/map.txt',
         'https://my.mlsapro.com/pass.txt'
     ];
-        function searchFiles() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const results = document.getElementById('results');
 
-            // Clear previous results
-            results.innerHTML = '';
+    function searchFiles() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const results = document.getElementById('results');
 
-            // Search through the files
-            const filteredFiles = files.filter(file => file.toLowerCase().includes(query));
+        // Clear previous results
+        results.innerHTML = '';
 
-            // Display results
-            filteredFiles.forEach(file => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = 'https://mlsapro.com/' + file;  // Adjust base URL if needed
-                a.textContent = file;
-                li.appendChild(a);
-                results.appendChild(li);
-            });
+        // Search through the files
+        const filteredFiles = files.filter(file => file.toLowerCase().includes(query));
 
-            if (filteredFiles.length === 0) {
-                results.innerHTML = '<li>No files found.</li>';
-            }
+        // Display results
+        filteredFiles.forEach(file => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = file;  // Use the file URL as is
+            a.textContent = file;
+            li.appendChild(a);
+            results.appendChild(li);
+        });
+
+        if (filteredFiles.length === 0) {
+            results.innerHTML = '<li>No files found.</li>';
         }
-    </script>
+    }
+</script>
 </body>
 </html>
