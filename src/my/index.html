@@ -278,66 +278,63 @@
         <p class="shahzal-rehman-text">Shahzal Rehman</p>
 <p class="Powered-by-text">Donotreply@mlsapro.com</p>
     </div>
+<script>
+    // JavaScript to control the display after 10 seconds
+    setTimeout(function () {
+        document.getElementById('neonText').style.display = 'none';
+        document.getElementById('mlsapro').style.display = 'block';
+    }, 10000);
 
-     <script>
-
-
-        // JavaScript to control the display after 10 seconds
-        setTimeout(function () {
-            document.getElementById('neonText').style.display = 'none';
-            document.getElementById('mlsapro').style.display = 'block';
-        }, 10000);
-
-    
-
-        // Creating random neon sparks
-        function createNeonSparks(numSparks) {
-            const neonSparksContainer = document.getElementById('neonSparks');
-            for (let i = 0; i < numSparks; i++) {
-                const spark = document.createElement('div');
-                spark.classList.add('neon-spark');
-                spark.style.width = `${Math.random() * 10 + 5}px`;
-                spark.style.height = `${Math.random() * 10 + 5}px`;
-                spark.style.left = `${Math.random() * 100}%`;
-                spark.style.top = `${Math.random() * 100}%`;
-                spark.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                neonSparksContainer.appendChild(spark);
-            }
+    // Creating random neon sparks
+    function createNeonSparks(numSparks) {
+        const neonSparksContainer = document.getElementById('neonSparks');
+        for (let i = 0; i < numSparks; i++) {
+            const spark = document.createElement('div');
+            spark.classList.add('neon-spark');
+            spark.style.width = `${Math.random() * 10 + 5}px`;
+            spark.style.height = `${Math.random() * 10 + 5}px`;
+            spark.style.left = `${Math.random() * 100}%`;
+            spark.style.top = `${Math.random() * 100}%`;
+            spark.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            neonSparksContainer.appendChild(spark);
         }
+    }
 
-        // Call the function to create neon sparks
-        createNeonSparks(70);
+    // Call the function to create neon sparks
+    createNeonSparks(70);
 
-function login() {
-            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
-            var redirectUri = encodeURIComponent("https://my.mlsapro.com/home");
-            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
-            var scope = "user.read";
-            var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
-            window.open(loginUrl, "_blank", "noopener,noreferrer");
-        }
+    function login() {
+        var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+        var redirectUri = encodeURIComponent("https://my.mlsapro.com/home");
+        var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+        var scope = "user.read";
+        var loginUrl = `${authority}?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&scope=${scope}`;
+        window.open(loginUrl, "_blank", "noopener,noreferrer");
+    }
 
-        function signOut() {
-            var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
-            var postLogoutRedirectUri = encodeURIComponent("https://my.mlsapro.com");
-            var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
-            var url = authority + "?post_logout_redirect_uri=" + postLogoutRedirectUri;
-            window.location.href = url;
-        }
+    function signOut() {
+        var clientId = "9ec16646-a913-4fdb-8249-08fb1d98b99d";
+        var postLogoutRedirectUri = encodeURIComponent("https://my.mlsapro.com");
+        var authority = "https://login.microsoftonline.com/common/oauth2/v2.0/logout";
+        var url = `${authority}?post_logout_redirect_uri=${postLogoutRedirectUri}`;
+        window.location.href = url;
+    }
 
-        function openWhatsApp() {
-            var urls = [
-                "https://chat.whatsapp.com/Djp2Wfn7gjT5x5MuYSuclt",
-                "https://chat.whatsapp.com/GZWAi6ea7mh0IVpnACMh3t",
-                "https://chat.whatsapp.com/KcKHRbjuSAo7NbBuZEf6GI",
-                "https://learn.microsoft.com/en-us/training/challenges?id=d5e64ffc-701d-4e97-94e4-9502fcc0712b&WT.mc_id=cloudskillschallenge_d5e64ffc-701d-4e97-94e4-9502fcc0712b&wt.mc_id=studentamb_281705",
-            ];
+    function openWhatsApp() {
+        var urls = [
+            "https://chat.whatsapp.com/Djp2Wfn7gjT5x5MuYSuclt",
+            "https://chat.whatsapp.com/GZWAi6ea7mh0IVpnACMh3t",
+            "https://chat.whatsapp.com/KcKHRbjuSAo7NbBuZEf6GI"
+        ];
 
-            urls.forEach(function(url) {
-                window.open(url, "_blank", "noopener,noreferrer");
-            });
-        }
-    </script>
+        urls.forEach((url, index) => {
+            setTimeout(() => {
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }, index * 500); // Adjust the delay as needed
+        });
+    }
+</script>
+
 </body>
 
 </html>
