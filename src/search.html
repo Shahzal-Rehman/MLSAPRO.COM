@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic File Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 60%;
+            max-width: 400px;
+        }
+
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dynamic File Search</h1>
+        <input type="text" id="searchInput" placeholder="Search for files...">
+        <button onclick="searchFiles()">Search</button>
+    </header>
+    <main>
+        <ul id="results"></ul>
+    </main>
+<script>
+    // Simulated file data
+    const files = [
+        'https://mlsapro.com/Book1.xlsx',
+        'https://mlsapro.com/Book2.xlsx',
+        'https://mlsapro.com/Book3%201.xlsx',
+        'https://mlsapro.com/Book3.xlsx',
+        'https://mlsapro.com/Book4.xlsx',
+        'https://mlsapro.com/Book5.xlsx',
+        'https://mlsapro.com/Book6.xlsx',
+        'https://mlsapro.com/Book7.xlsx',
+        'https://mlsapro.com/Copy%20of%20Book2.xlsx',
+        'https://mlsapro.com/Copy%20of%20Book4%20(1).xlsx',
+        'https://mlsapro.com/Copy%20of%20Book4%20(2)%20(1).xlsx',
+        'https://mlsapro.com/Copy%20of%20Book4%20(2).xlsx',
+        'https://mlsapro.com/Copy%20of%20Book4.xlsx',
+        'https://mlsapro.com/2/KeysExport%20(1).xml',
+        'https://mlsapro.com/2/book.html',
+        'https://mlsapro.com/2/bookmarks_8_22_24.html',
+        'https://mlsapro.com/2/chrome.csv',
+        'https://mlsapro.com/2/google.csv',
+        'https://mlsapro.com/2/new',
+        'https://mlsapro.com/2/search.html',
+        'https://mlsapro.com/colour',
+        'https://mlsapro.com/blogs',
+        'https://mlsapro.com/home',
+        'https://mlsapro.com/my',
+        'https://my.mlsapro.com/Youngest%20Microsoft%20Pro%20at%2015!.mp4',
+        'https://mvp.microsoft.com/en-US/studentambassadors/profile/e35e0c4c-5d79-454a-8d8d-cb75c8b016fc?wt.mc_id=studentamb_281705',
+        'https://my.mlsapro.com/blogs',
+        'https://my.mlsapro.com/blend',
+        'https://my.mlsapro.com/colour',
+        'https://my.mlsapro.com/colour/effect.html',
+        'https://my.mlsapro.com/colour/sketch.html',
+        'https://purple-tree-026ae2e10.5.azurestaticapps.net/',
+        'https://brave-plant-0df5a7c1e.5.azurestaticapps.net/',
+        'https://delightful-ocean-00ca65510.5.azurestaticapps.net',
+        'https://gentle-pebble-01e938610.4.azurestaticapps.net/',
+        'https://gray-beach-0792e3b10.5.azurestaticapps.net/',
+        'https://my.mlsapro.com/deck.pptx',
+        'https://my.mlsapro.com/deck1.pptx',
+        'https://my.mlsapro.com/windows.pptx',
+        'https://my.mlsapro.com/meta.txt',
+        'https://my.mlsapro.com/srmapofmain.txt',
+        'https://my.mlsapro.com/map.txt',
+        'https://my.mlsapro.com/pass.txt'
+    ];
+        function searchFiles() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const results = document.getElementById('results');
+
+            // Clear previous results
+            results.innerHTML = '';
+
+            // Search through the files
+            const filteredFiles = files.filter(file => file.toLowerCase().includes(query));
+
+            // Display results
+            filteredFiles.forEach(file => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = 'https://mlsapro.com/' + file;  // Adjust base URL if needed
+                a.textContent = file;
+                li.appendChild(a);
+                results.appendChild(li);
+            });
+
+            if (filteredFiles.length === 0) {
+                results.innerHTML = '<li>No files found.</li>';
+            }
+        }
+    </script>
+</body>
+</html>
