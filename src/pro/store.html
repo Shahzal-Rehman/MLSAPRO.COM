@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Epafra's File Sharing System</h3>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="fileInput" accept=".txt,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.rar" multiple>
+            <input type="password" id="passwordInput" placeholder="Set password (optional)">
+            
+            <input type="datetime-local" id="expiryInput" placeholder="Set expiry date and time (optional)">
+            <button type="submit">Upload</button>
+        </form>
+        <div id="linkSection" class="hidden">
+            <p>Shareable Link:</p>
+            <input type="text" id="shareableLink" readonly>
+        </div>
+    </div>
+    <style>
+    body {
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 0;
+    border-radius: px;
+    
+    background-color: rgba(108, 198, 226, 0.5);
+            backdrop-filter: blur(8px);
+
+    
+}
+
+.container {
+    max-width: 400px;
+    
+    margin: 200px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLztMdvOB6SdigVlfAGEy3ENz-edR2ea5Z6g&usqp=CAU');
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+
+h3 {
+    text-align: center;
+    color: #e4e7eb;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    color: rgb(245, 250, 252);
+    margin: 50px auto;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+    border-radius: 13px;
+
+    
+
+}
+input[type="password"]{
+     margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 9px;
+    background-color: rgb(45, 47, 51);
+    color: rgb(31, 209, 70);
+    
+}
+    
+
+
+input[type="datetime-local"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 9px;
+    background-color:rgb(45, 47, 51);
+    color:rgb(31, 209, 70);
+    
+}
+
+button {
+    padding: 10px 10px;
+    background-color: #b2174b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+     border-radius: 15px;
+}
+ 
+
+button:hover {
+    background-color: #9c7698;
+}
+
+#linkSection {
+    display: flex;
+    flex-direction: column;
+    color: #e4e8ec;
+    border-radius: 10px;
+}
+input[type="text"]{
+    background-color: rgba(3, 3, 3, 0.937);
+    border-radius: 9px;
+    color: yellow;
+    
+} 
+
+.hidden {
+    display: none;
+    
+}
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const uploadForm = document.getElementById('uploadForm');
+    const fileInput = document.getElementById('fileInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const expiryInput = document.getElementById('expiryInput');
+    const linkSection = document.getElementById('linkSection');
+    const shareableLink = document.getElementById('shareableLink');
+
+    uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData();
+        const files = fileInput.files;
+        for (let i = 0; i < files.length; i++) {
+            formData.append('files', files[i]);
+        }
+
+        const password = passwordInput.value.trim();
+        if (password !== '') {
+            formData.append('password', password);
+        }
+
+        const expiryDateTime = expiryInput.value;
+        if (expiryDateTime !== '') {
+            formData.append('expiryDateTime', expiryDateTime);
+        }
+
+        // Send formData to server to handle file upload and generate shareable link
+        // Example: use fetch API or XMLHttpRequest to send formData to the server
+        // Upon successful upload, display the shareable link
+        const fakeShareableLink = 'https://example.com/shared-files';
+        shareableLink.value = fakeShareableLink;
+        linkSection.classList.remove('hidden');
+    });
+});
+
+</script>
+
+</body>
+</html>
