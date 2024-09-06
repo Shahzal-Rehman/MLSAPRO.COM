@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .filter-buttons {
+      margin-bottom: 20px;
+      color: blue;
+    }
+    
+    .filter-buttons button {
+      margin-right: 10px;
+      padding: atuo;
+      background-color: #8dcfec;
+     
+      border-radius: 5px;
+      border-top: 30px;
+      
+      cursor: pointer;
+    }
+    h2{
+        color:#3d9776;
+        text-align: center;
+    }
+    
+    .filter-buttons button.active {
+      background-color: #d99830;
+    }
+  </style>
+</head>
+<body>
+    <h2>Gallery</h2>
+  <div class="filter-buttons">
+    <button class="filter-button active" data-filter="all">All</button>
+    <button class="filter-button" data-filter="nature">National flag</button>
+    <button class="filter-button" data-filter="animals">Animals</button>
+    <button class="filter-button" data-filter="ai">AI</button>
+    <button class="filter-button" data-filter="virat kohil">virat kohil</button>
+    <button class="filter-button" data-filter="3D Animations">3D Animations</button>
+    <button class="filter-button" data-filter="Ethical Hacking">Ethical Hacking</button>
+    <button class="filter-button" data-filter="Networks">Networks</button>
+  </div>
+  
+  <div class="gallery">
+    <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDWdnCJyaGq2mzSfUftKmjLkayop_-ev-DGQ&usqp=CAU" alt="National flag">
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvoY_TvtSkjzqtmEZRKdbzVitlqC9uPtKW5Q&usqp=CAU" alt="National flag">
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd6fvu53sCq_lspbDQ0Yt47B4aMaMVfpa9bQ&usqp=CAU" alt="National flag">
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN9oEWUa3-d1bMhCjIscTMJcaKdY3vcKWrUg&usqp=CAU" alt="National flag">
+    </div>
+    <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS27WIkuuUO0CRAmgyEQzLYpBUWgCdvmmjnGH0cq0yoeC1etOREA-O9hwO24OARn-R-0RA&usqp=CAU" alt="National flag">
+    </div>
+     <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-CyfQuKUEkUN9NgDrqRRQu9wWvcA6XC8eg&usqp=CAU" alt="National flag">
+    </div>
+     <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aEjt_MO_gkhU2GXPr-Yol-FHHn6bBiRsfg&usqp=CAU" alt="National flag">
+    </div>
+     <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaub4A1dthdfnNBteHvFz9uGAkYQoIgPFZHA&usqp=CAU" alt="National flag">
+    </div>
+     <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSljIL5YTHOELhEslGU0rBQEi_iw-Xh2dt3Gw&usqp=CAU" alt="National flag">
+    </div>
+     <div class="gallery-item" data-category="nature">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR41VzoRqvltNPNWLER2XWr41X-46spuEU7SQ&usqp=CAU" alt="National flag">
+    </div>
+    <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGhVUagXL59FiswSf_50bmRPmFXp3kj2ehlw&usqp=CAU" alt="Animals">
+    </div>
+    <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAVqqF0yXQJ0CUDqmlknglKCmCrHFVIO_T_A&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6zTfTBvoVwU2ybuErONzJXbStFBoDYEFl5w&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ1c6g1cITH3jkcGNoscEVGVcfdtwF16bMMQ&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIUWK46aVTCWffvuPR_tbewEq39WVzqIF32Q&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAYhOVPtOXLB2KHHf9yajagMLMAlDEvGTqXg&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ38Ns-CVTDefJzIOyf7qTAbQ0M09CRhV1oQA&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR81RdVieE9LaBidW89I_DnOVWK7U-UB9ur4A&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpRhGMHZhUM_4l7GR7itGCPFwiQ69T9e5L3KodVYr9bYUR2Ti7R81vXJ8U-5LLgzfN1X8&usqp=CAU" alt="Animals">
+    </div>
+     <div class="gallery-item" data-category="animals">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2WZl7sVLKNhyzmAEDuRpS1QuXxcETACrPwQ&usqp=CAU" alt="Animals">
+    </div>
+    <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm09sUIc7f6qJOCrrEH8vGsEGOG2TkWwb0JA&usqp=CAU" alt="AI">
+      </div>
+      <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgUMpvy0LhxBs1ErD1MeOsE-yTs4FoZlpEJQ&usqp=CAU" alt="AI">
+      </div>
+      <div class="gallery-item" data-category="ai">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqF8eAZLZQvD31aSpMXiVWsXB35PwIYbnwgg&usqp=CAU" alt ="AI">
+          </div>
+          <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXLkec1247bjfz-dM3bKBw4jAhURpNQWKaZg&usqp=CAU" alt="AI">
+      </div>
+      <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYMDOIIjVKiuUAOfFt6neIkKeXGm4gQtXaNw&usqp=CAU" alt ="AI">
+      </div>
+      <div class="gallery-item" data-category="ai">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsBIkHrGZPebHGvXgTR9vQs-9RmUxBwsWS4Q&usqp=CAU" alt="AI">
+          </div>
+          <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU37S3dKGGRQTrkiQTzdjtMC1RLzaIKoxw5w&usqp=CAU" alt="AI">
+      </div>
+      <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDFucBDbOWw6BCd_h5MUAE0Dq8eiKTuNQhJg&usqp=CAU" alt="AI">
+      </div>
+      <div class="gallery-item" data-category="ai">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScumZzsmkKi0BwEk_E98NzF94uHSEZ8pEqww&usqp=CAU" alt="AI">
+          </div>
+          <div class="gallery-item" data-category="ai">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmXoziF8JMsRN7DL9Z25jvBZiVrhgFlk0f4PayzZDSODY77dLUnxvrTdITwcFKnMI5mYw&usqp=CAU" alt="AI">
+      </div>
+      <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeGi01njIUAsmvnYBA1xKB6i9_kl5QVd2dsA&usqp=CAU" alt="3D Animations">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmrIcFwYig92o99zR_9ethhckL0wBVV_64w&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVu1-Uy-DRBVDaYQFcmH197c6ATJNBw0lsig&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbOT4W0aj9MYVVRCEewKlhvWrRx77BJ6sqUg&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWMgaspT3eQmDLF8FBL_uaslnhJpRoxg6HWQ&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsIbReBDGCGHB-tWdLVPhuhkPHiXy9g5YD7A&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm7bpqLToLJMi4kxDTWqldxfJRian0cZl45A&usqp=CAUU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1YyqnjbzYBtOovqaaifYGT7xx2AEdqsDdfQ&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="nvirat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIu4A0w5faFsXU3X3BoW6S0IiaG8cSA_wfBg&usqp=CAU" alt="virat kohil">
+    </div>
+    <div class="gallery-item" data-category="virat kohil">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzaX9qCkQB5oMIrZvssnQPt8PKHz9RhrKjxg&usqp=CAU" alt="virat kohil">
+    </div>
+ <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQvF77XwPPOIGAsc3Dw3aFTcC9Z-5LqViZXw&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOODDDomflI8jjwdKYL0VDz1rF4O48Or04Ag&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ34sqU1F9W7k8hGpucknpPNLL6qqAxmd6TA&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZdKPV5MPaWqIFF8cwYnLdUiKpnF9WpaIlWQ&usqp=CAU" alt="3D Animations">
+    </div>
+    <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMpGdQHNJpjcX3-VwJ6NQyddHkFHLWD2bO-w&usqp=CAU" alt="3D Animations">
+    </div>    
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiNQs0-lNQUDiFTN5cvOK8oc__CxQtfgHtjQ&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDH0CdWyMjRDZVndMvX9xk109Kp18nRjbJcA&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51PQp2sRdT91K_x7mzvCdKdX1uv_u6y5-rw&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROoT-RM4Wk5kjiAgO89YW9TC575cx75HO-nw&usqp=CAU" alt="3D Animations">
+    </div>
+     <div class="gallery-item" data-category="3D Animations">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCqKNGAoHDyWRkuP6gDetgqyYBY6O0eqgsYg&usqp=CAU" alt="3D Animations">
+    </div>
+    </div>
+    
+    <div class="gallery">
+        <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOTqooEWrOrV1gIUz7_PJnJhLBlt8aYMOnMA&usqp=CAU"  alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjye1Qp3irw_8z83VkvKVu7lbavif-kHIMi-gHzmg-xO0xdpurXn_8Jkeq7UpR1p6-T84&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToblpjjv8Q2A_YgOr0E78VsnL78vTb93uulA&usqp=CAU" alt="Ethical Hacking">
+        </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwx4B9U0TtLcuxZzuvRdhaV36BmW2mNgEVzg&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1eg62q6rR7_p_nxkIschUoxwXgIhwdLKiLA&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVyJO3OxKwINaQSzqHVuS0relWcrsIF-ioLA&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRnMQg6nYW9f2j4vaMAzHIAqc5FL-JA-KzSg&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPD1E8YMNNsOG6L_JTymsu8ZFuMJCJ3W9NIQ&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd4-jfJk5W9Ohx84Fq-urVT2deLCUzqR7BoQ&usqp=CAU" alt="Ethical Hacking">
+      </div>
+    <div class="gallery-item" data-category="Ethical Hacking">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzZVJ_7mFE5ZY_6k7fkgceWEySbbPNZWeJLg&usqp=CAU" alt="Ethical Hacking">
+      </div>
+
+
+      <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvFG0Ovmj3LiGAsV95Wt5fxGWks6WiXCz4tQ&usqp=CAU" alt="Ethical Hacking">
+        </div>
+      <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-6Jh1v2Tk_GSCiJgKm8Mw_fUa5xs9h31f5w&usqp=CAU" alt="Ethical Hacking">
+        </div>
+      <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2uALbgy7qrDYrjwfOZmi5Kr5mxF0Jm6a5iA&usqp=CAU" alt="Ethical Hacking">
+        </div>
+      <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT02PJ68V_1jPJW697KfA9yWWken3vLpIcwyg&usqp=CAU" alt="Ethical Hacking">
+        </div>
+      <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIjzEca8LMU3rJHJ0USbofGqhqH3QgnhhC3g&usqp=CAU" alt="Ethical Hacking">
+        </div>
+      <div class="gallery-item" data-category="Ethical Hacking">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHqJi-LvX2qAxL-4zeUs4lC-2pau2qsEqLTQ&usqp=CAU" alt="Ethical Hacking">
+        </div>
+
+      </div>
+      <div class="gallery">
+          <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuxK8lbZNeKxRj7_-KZbvPkIqMbN1Vvrlngg&usqp=CAU" alt="Networks">
+      </div>
+    <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmqQGxbuEnaozLnUvXH8USTbjboO1VN8_1sg&usqp=CAUg" alt="Networks">
+      </div>
+    <div class="gallery-item" data-category="Networks">
+      <img src="https://d3e8mc9t3dqxs7.cloudfront.net/wp-content/uploads/sites/11/2016/02/wireless-networking-technology.jpg" alt="Networks">
+      </div>
+    <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQFozLyIcOADHbzKQO8GSCnzZ8IHQAAUTxRA&usqp=CAU" alt="Networks">
+      </div>
+    <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwEgETaGLVxwE-rwRP5oMcKSScRVJj2DKk7Q&usqp=CAU" alt="Networks">
+      </div>
+     <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpii9mZgzLgz98e4fl7jyS5J39D-GQOg1FCA&usqp=CAU" alt="Networks">
+      </div>
+     <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwZn-PKmxL2GCaVc2qbuT7I20AmBT5nOD80Q&usqp=CAU" alt="Networks">
+      </div>
+     <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ73wNNYTOA2WOjBhfLBiR5J_V1eplH0M-mQ&usqp=CAU" alt="Networks">
+      </div>
+     <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpWC_y22KqAYOs-no9yncxbfH9YhsvRCLCKw&usqp=CAU" alt="Networks">
+      </div>
+     <div class="gallery-item" data-category="Networks">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRLTtWLZ46Eh0Gec45GWicpadaBRGCA_uY_Q&usqp=CAU" alt="Networks">
+     </div>
+      <div class="gallery-item" data-category="Networks">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSr2wGVW4g7jdPzKI5stV-IXf109Qq1vDJAg&usqp=CAU" alt="Networks">
+        </div>
+       <div class="gallery-item" data-category="Networks">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReznaV7cwU0BKct0b-VjjKlTBbSLyGUPuBJw&usqp=CAU" alt="Networks">
+        </div>
+       <div class="gallery-item" data-category="Networks">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUcOzOeKSNDeX6C5pbC8JJ44ALGi0hiFk5PQ&usqp=CAU" alt="Networks">
+        </div>
+       <div class="gallery-item" data-category="Networks">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjBhBY6lKkWBfKAyTInmgRQj61uWGlLfIJwQ&usqp=CAU" alt="Networks">
+        </div>
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.dataset.category === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+        
+        button.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
